@@ -1,0 +1,265 @@
+{
+  "siteInfo": {
+    "name": "Ali Tepe Vakfı",
+    "tagline": "Topluma Değer Katmak, Geleceğe Umut Olmak",
+    "description": "Ali Tepe Vakfı, topluma değer katmak ve gelecek nesillere daha iyi bir dünya bırakmak amacıyla kurulmuş bir hayır kurumudur.",
+    "language": "tr",
+    "email": "info@alitepevakfi.org",
+    "phone": "+90 (XXX) XXX XX XX",
+    "address": "Adres bilgisi buraya gelecek",
+    "socialMedia": {
+      "instagram": "https://instagram.com/alitepevakfi",
+      "twitter": "https://twitter.com/alitepevakfi",
+      "facebook": "https://facebook.com/alitepevakfi",
+      "linkedin": "https://linkedin.com/company/alitepevakfi"
+    }
+  },
+
+  "images": {
+    "logo": {
+      "path": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/logo-removebg-preview.webp",
+      "alt": "Ali Tepe Vakfı Logo"
+    },
+    "favicon": {
+      "path": "/vite.svg",
+      "description": "Tarayıcı sekmesi ikonu - değiştirmek için public/vite.svg dosyasını değiştirin"
+    },
+    "aliTepe": {
+      "path": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/ali-tepe-photo.webp",
+      "alt": "Ali Tepe"
+    },
+    "whoAreWe": {
+      "path": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/logo.webp",
+      "alt": "Ali Tepe Vakfı Hakkında"
+    },
+    "event": {
+      "path": "/event.png",
+      "alt": "Etkinlik Görseli"
+    },
+    "main": {
+      "path": "/main.png",
+      "alt": "Ana Görsel"
+    }
+  },
+
+  "navigation": {
+    "header": [
+      {
+        "text": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "text": "Ali Tepe Özgeçmiş",
+        "href": "/ali-tepe"
+      },
+      {
+        "text": "Mütevelli Heyeti",
+        "href": "/mutevelli-heyeti"
+      },
+      {
+        "text": "Faaliyetlerimiz",
+        "href": "/faaliyetlerimiz"
+      },
+      {
+        "text": "Etkinlikler",
+        "href": "/etkinlikler"
+      },
+      {
+        "text": "İletişim",
+        "href": "/contact"
+      }
+    ]
+  },
+
+  "homePage": {
+    "hero": {
+      "title": {
+        "line1": "Topluma Değer Katmak",
+        "line2": "Geleceğe Umut Olmak"
+      },
+      "description": "Ali Tepe Vakfı olarak eğitim, sağlık ve sosyal sorumluluk alanlarında topluma katkı sağlamak için çalışıyoruz",
+      "buttons": [
+        {
+          "text": "Etkinliklerimiz",
+          "href": "/active-events"
+        },
+        {
+          "text": "Faaliyetlerimiz",
+          "href": "/mutevelli-heyeti"
+        }
+      ],
+      "scrollText": "Keşfetmeye başla"
+    },
+
+    "whoAreWe": {
+      "title": "Biz Kimiz?",
+      "description": "Ali Tepe Vakfı, topluma değer katmak ve gelecek nesillere daha iyi bir dünya bırakmak amacıyla kurulmuş bir hayır kurumudur. Eğitim, sağlık ve sosyal sorumluluk alanlarında çalışmalarımızı sürdürüyoruz.",
+      "image": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/logo.webp"
+    },
+
+    "whyUs": {
+      "title": "Neden Biz?",
+      "subtitle": "Fark Yaratan Değerlerimiz",
+      "values": [
+        {
+          "title": "Şeffaflık",
+          "description": "Tüm faaliyetlerimizi şeffaf bir şekilde yürütüyoruz"
+        },
+        {
+          "title": "Güvenilirlik",
+          "description": "Toplumun güvenini kazanmış bir vakıf olarak çalışıyoruz"
+        },
+        {
+          "title": "Sürdürülebilirlik",
+          "description": "Uzun vadeli ve sürdürülebilir projeler geliştiriyoruz"
+        },
+        {
+          "title": "Toplumsal Fayda",
+          "description": "Her projemizde toplumsal faydayı ön planda tutuyoruz"
+        }
+      ]
+    }
+  },
+
+  "aliTepePage": {
+    "title": "Ali Tepe",
+    "subtitle": "(Kurucu Başkan)",
+    "years": "(1930 - 2017)",
+    "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/ali-tepe-photo.webp",
+    "quickInfo": {
+      "birthPlace": "1930, Tokat",
+      "death": "Mart 2017",
+      "foundationYear": "1996",
+      "profession": "İş İnsanı"
+    },
+    "biography": "Ali Tepe, 1930 yılında İstanbul'da doğmuş, 2017 yılında hayatını kaybetmiş bir Türk iş insanı, hayırsever ve vakıf kurucusudur. Ömrü boyunca, topluma katkıda bulunmaya adanmış bir lider olarak tanınmış ve birçok sosyal sorumluluk projesine imza atmıştır. Ali Tepe, Türkiye'nin önde gelen iş adamlarından biri olarak bilinirken, aynı zamanda toplumsal konulara olan derin ilgisiyle de ön plana çıkmıştır. İş dünyasındaki başarıları kadar, insanlara yardım etme tutkusuyla da hafızalarda yer etmiştir. Genç yaşlardan itibaren ailesi ve çevresinden aldığı değerler doğrultusunda, kişisel kazançlarını toplumun refahı için kullanma arzusuyla hareket etmiştir. Özellikle eğitim, sağlık ve sosyal kalkınma alanlarında yaptığı katkılarla, birçok bireyin hayatına dokunmuş ve topluma kalıcı bir miras bırakmıştır. Ali Tepe'nin kariyeri, sadece maddi başarılarla değil, aynı zamanda insanlık değerlerine olan bağlılığıyla şekillenmiştir. İş hayatına başladığında, dürüstlük, azim ve sosyal sorumluluk gibi temel ilkeleri benimseyen bir girişimci olarak dikkat çekmiştir. Bu değerler, onun hem profesyonel hem de kişisel yaşamında yol gösterici olmuştur. Kariyerinin ilerleyen yıllarında, iş dünyasında kazandığı başarıyı, topluma geri verme amacıyla birleştirmiş ve eğitime, sağlık hizmetlerine ve alt yapı projelerine büyük yatırımlar yapmıştır. Ali Tepe'nin toplumsal katkıları, sadece parasal destekle sınırlı kalmamış; aynı zamanda projelerini yönlendirme, stratejik kararlar alma ve sosyal etki yaratma konusunda da aktif rol almıştır. 1990 yılında, hayatının en büyük projelerinden birini hayata geçirerek, kendi adını taşıyan Ali Tepe Vakfı'nı kurmuştur. Vakıf, kuruluşundan itibaren eğitim, sağlık, kültür ve sosyal hizmet alanlarında birçok projeye imza atmıştır. Ali Tepe'nin vizyonu, vakfın çalışmalarının temelini oluşturmuş ve yıllarca sürdürülecek bir sistem inşa etmiştir. Vakıf, yalnızca ekonomik desteği değil, aynı zamanda toplumda farkındalık yaratma ve insanların hayat standartlarını iyileştirme misyonunu da taşımıştır. Ali Tepe'nin liderliğinde, vakıf birçok kişinin eğitim almasına, sağlık hizmetlerine erişmesine ve sosyal olanaklardan yararlanmasına olanak sağlamıştır. Ali Tepe, 2017 yılında hayatını kaybetmiş olsa da, onun bıraktığı miras ve vakfın çalışmaları bugün hâlâ sürmektedir. Vakıf, kurucusunun değerlerini yaşatarak, topluma hizmet etmeye devam etmekte ve gelecek nesillere daha iyi bir dünya bırakma hedefiyle çalışmalarını sürdürmektedir. Ali Tepe'nin hayata olan olumlu bakış açısı, zorluklar karşısında gösterdiği dayanıklılık ve topluma olan bağlılığı, birçok insana ilham kaynağı olmaya devam etmektedir. \"Bir insanın değeri, sahip olduklarıyla değil, başkalarına neler verdiğiyle ölçülür.\" - Ali Tepe"
+  },
+
+  "mutevelliHeyetiPage": {
+    "title": "Mütevelli Heyeti",
+    "subtitle": "Ali Tepe Vakfı'nı yöneten ve yol gösteren değerli mütevelli heyet üyelerimiz",
+    "about": {
+      "title": "Mütevelli Heyeti Hakkında",
+      "paragraphs": [
+        "Mütevelli Heyeti, vakfın en üst karar organıdır ve vakfın amaçları doğrultusunda çalışmalarını yürütmekle sorumludur. Heyet üyeleri, deneyimleri ve bilgi birikimleriyle vakfın stratejik yönünü belirler ve faaliyetlerini denetler.",
+        "Ali Tepe Vakfı Mütevelli Heyeti, topluma katkı sağlama vizyonuyla hareket eder ve vakfın değerlerini koruyarak gelecek nesillere aktarılmasını sağlar."
+      ]
+    },
+    "members": [
+      {
+        "id": 1,
+        "name": "Ali Tepe",
+        "title": "Kurucu Başkanı",
+        "profession": "İş Adamı",
+        "years": "(1930-2017)",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/ali-tepe.webp",
+        "bio": "Vakıf kurucusu ve başkanımız 09/03/2017 tarihinde vefat etmiştir. Sevgisi yüreğimizde sonsuza dek yaşayacaktır. Mekanı cennet olsun.",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 2,
+        "name": "Reşat Doğru",
+        "title": "Mütevelli Yönetim Kurulu Başkanı",
+        "profession": "Doktor - Eski Bakan",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/resat-dogru.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 3,
+        "name": "Ali Kaya",
+        "title": "Asil Üye",
+        "profession": "Avukat",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/ali-kaya.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 4,
+        "name": "Prof. Dr. Mustafa Erdem",
+        "title": "Asil Üye",
+        "profession": "Eski Milletvekili",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/mustafa-erdem.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 5,
+        "name": "Hasan Çalış",
+        "title": "Asil Üye",
+        "profession": "Doktor - Eski Milletvekili",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/hasan-calis.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 6,
+        "name": "Yaşar Karaaslan",
+        "title": "Asil Üye",
+        "profession": "Emekli Yönetici",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/yasar-karaaslan.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 7,
+        "name": "Orhan Ziya Diren",
+        "title": "Asil Üye",
+        "profession": "Eski Milletvekili - Ticaret",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/orhan-ziya-diren.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 8,
+        "name": "Mustafa Baş",
+        "title": "Asil Üye",
+        "profession": "Başmüfettiş",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/mustafa-bas.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      },
+      {
+        "id": 9,
+        "name": "Süha Şen",
+        "title": "Asil Üye",
+        "profession": "Uzman Doktor",
+        "photo": "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/suha-sen.webp",
+        "bio": "",
+        "email": "",
+        "linkedin": ""
+      }
+    ],
+    "footerNote": "Mütevelli Heyeti düzenli olarak toplanarak vakfın işleyişini değerlendirir ve gelecek planlarını belirler. Vakıf faaliyetleri hakkında detaylı bilgi almak için bizimle iletişime geçebilirsiniz."
+  },
+
+  "footer": {
+    "description": "Ali Tepe Vakfı, topluma değer katmak ve gelecek nesillere daha iyi bir dünya bırakmak amacıyla kurulmuş bir hayır kurumudur. Eğitim, sağlık ve sosyal sorumluluk alanlarında çalışmalarımızı sürdürüyoruz.",
+    "quickLinks": [
+      {
+        "text": "Ali Tepe",
+        "href": "/ali-tepe"
+      },
+      {
+        "text": "Mütevelli Heyeti",
+        "href": "/mutevelli-heyeti"
+      },
+      {
+        "text": "Faaliyetlerimiz",
+        "href": "/faaliyetlerimiz"
+      },
+      {
+        "text": "İletişim",
+        "href": "/contact"
+      }
+    ]
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "pageInfo": {
+    "title": "İletişim",
+    "description": "Gazi Siber Topluluğu ile iletişime geçin. Sorularınız, önerileriniz ve iş birliği teklifleriniz için bize ulaşın."
+  },
+  "heroSection": {
+    "title": "İletişim",
+    "subtitle": "Bizimle iletişime geçin! Sorularınız, önerileriniz ve iş birliği teklifleriniz için her zaman buradayız.",
+    "heroPhoto": {
+      "src": "/contact/hero-contact.jpg",
+      "alt": "İletişim Hero Fotoğrafı"
+    }
+  },
+  "sections": {
+    "contactInfo": {
+      "title": "İletişim Bilgileri",
+      "description": "Bize ulaşmak için aşağıdaki iletişim kanallarını kullanabilirsiniz"
+    },
+    "contactForm": {
+      "title": "Mesaj Gönder",
+      "description": "Aşağıdaki formu doldurarak doğrudan bizimle iletişime geçebilirsiniz"
+    },
+    "socialMedia": {
+      "title": "Sosyal Medya",
+      "description": "Sosyal medya hesaplarımızdan bizi takip edin ve güncel kalın"
+    },
+    "location": {
+      "title": "Konum",
+      "description": "Gazi Üniversitesi kampüsündeki konumumuz ve adres bilgileri"
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "description": "En çok merak edilen konulara dair yanıtlar"
+    }
+  },
+  "contactMethods": [
+    {
+      "id": 1,
+      "type": "email",
+      "title": "E-posta",
+      "value": "info@gazisiber.com",
+      "description": "Genel sorularınız ve bilgi talepleriniz için",
+      "icon": "email",
+      "color": "from-blue-500/20 to-blue-600/20",
+      "iconColor": "text-blue-400",
+      "link": "mailto:info@gazisiber.com"
+    },
+    {
+      "id": 2,
+      "type": "phone",
+      "title": "Telefon",
+      "value": "+90 000 000 0000",
+      "description": "Acil durumlar ve hızlı iletişim için",
+      "icon": "phone",
+      "color": "from-green-500/20 to-green-600/20",
+      "iconColor": "text-green-400",
+      "link": "tel:+900000000000"
+    },
+    {
+      "id": 3,
+      "type": "whatsapp",
+      "title": "WhatsApp",
+      "value": "+90 55x xxx xx xx",
+      "description": "Hızlı mesajlaşma ve anında iletişim için",
+      "icon": "whatsapp",
+      "color": "from-green-500/20 to-green-600/20",
+      "iconColor": "text-green-400",
+      "link": "https://wa.me/905xxxxxxx"
+    },
+    {
+      "id": 4,
+      "type": "address",
+      "title": "Adres",
+      "value": "Gazi Üniversitesi, Teknoloji Fakültesi",
+      "description": "06500 Teknikokullar, Ankara, Türkiye",
+      "icon": "location",
+      "color": "from-red-500/20 to-red-600/20",
+      "iconColor": "text-red-400",
+      "link": "https://maps.google.com/maps?q=Gazi+Üniversitesi+Teknoloji+Fakültesi"
+    }
+  ],
+  "socialMediaAccounts": [
+    {
+      "id": 1,
+      "platform": "Instagram",
+      "username": "@gazisiber",
+      "url": "https://instagram.com/gazisiber",
+      "icon": "instagram",
+      "color": "from-pink-500/20 to-purple-600/20",
+      "iconColor": "text-pink-400",
+      "description": "Günlük paylaşımlarımız ve etkinlik fotoğrafları"
+    },
+    {
+      "id": 2,
+      "platform": "LinkedIn",
+      "username": "Gazi Siber Topluluğu",
+      "url": "https://linkedin.com/company/gazisiber",
+      "icon": "linkedin",
+      "color": "from-blue-500/20 to-blue-700/20",
+      "iconColor": "text-blue-500",
+      "description": "Profesyonel ağımız ve kariyer fırsatları"
+    },
+    {
+      "id": 3,
+      "platform": "Twitter",
+      "username": "@gazisiber",
+      "url": "https://twitter.com/gazisiber",
+      "icon": "twitter",
+      "color": "from-sky-500/20 to-sky-600/20",
+      "iconColor": "text-sky-400",
+      "description": "Anlık duyurular ve güncel haberler"
+    },
+    {
+      "id": 4,
+      "platform": "Discord",
+      "username": "Gazi Siber Discord",
+      "url": "https://discord.gg/gazisiber",
+      "icon": "discord",
+      "color": "from-indigo-500/20 to-purple-600/20",
+      "iconColor": "text-indigo-400",
+      "description": "Topluluk sohbet kanalımız ve teknik tartışmalar"
+    },
+    {
+      "id": 5,
+      "platform": "GitHub",
+      "username": "gazisiber",
+      "url": "https://github.com/gazisiber",
+      "icon": "github",
+      "color": "from-gray-500/20 to-gray-600/20",
+      "iconColor": "text-gray-600",
+      "description": "Açık kaynak projelerimiz ve kod paylaşımları"
+    }
+  ],
+  "contactForm": {
+    "fields": [
+      {
+        "name": "fullName",
+        "label": "Ad Soyad",
+        "type": "text",
+        "placeholder": "Adınızı ve soyadınızı girin",
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "E-posta Adresi",
+        "type": "email",
+        "placeholder": "E-posta adresinizi girin",
+        "required": true
+      },
+      {
+        "name": "subject",
+        "label": "Konu",
+        "type": "select",
+        "placeholder": "Mesajınızın konusunu seçin",
+        "required": true,
+        "options": [
+          "Genel Bilgi",
+          "Üyelik Başvurusu",
+          "Etkinlik Önerisi",
+          "İş Birliği Teklifi",
+          "Sponsorluk",
+          "Medya ve Basın",
+          "Teknik Destek",
+          "Diğer"
+        ]
+      },
+      {
+        "name": "phone",
+        "label": "Telefon Numarası",
+        "type": "tel",
+        "placeholder": "Telefon numaranızı girin (opsiyonel)",
+        "required": false
+      },
+      {
+        "name": "message",
+        "label": "Mesajınız",
+        "type": "textarea",
+        "placeholder": "Mesajınızı detaylı bir şekilde yazın...",
+        "required": true,
+        "rows": 5
+      }
+    ],
+    "submitButton": {
+      "text": "Mesajı Gönder",
+      "loadingText": "Gönderiliyor..."
+    },
+    "successMessage": "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
+    "errorMessage": "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "faq": [
+    {
+      "id": 1,
+      "question": "Topluluğa nasıl üye olabilirim?",
+      "answer": "Topluluğumuza üye olmak için öncelikle Gazi Üniversitesi öğrencisi olmanız gerekmektedir. Üyelik başvurusu için iletişim formunu kullanabilir veya sosyal medya hesaplarımızdan bize ulaşabilirsiniz."
+    },
+    {
+      "id": 2,
+      "question": "Hangi etkinlikleri düzenliyorsunuz?",
+      "answer": "Workshop'lar, seminerler, CTF yarışmaları, siber güvenlik konferansları, networking etkinlikleri ve teknik sunum toplantıları düzenlemekteyiz. Güncel etkinliklerimizi sosyal medya hesaplarımızdan takip edebilirsiniz."
+    },
+    {
+      "id": 3,
+      "question": "Etkinlikleriniz ücretli mi?",
+      "answer": "Çoğu etkinliğimiz ücretsizdir. Özel workshop'lar veya sertifikalı eğitimler için sembolik ücret alınabilir. Etkinlik detaylarında ücret bilgisi belirtilir."
+    },
+    {
+      "id": 4,
+      "question": "Siber güvenlik alanında yeni başlayanlar katılabilir mi?",
+      "answer": "Elbette! Topluluğumuz her seviyeden katılımcıya açıktır. Yeni başlayanlar için özel giriş seviyesi workshop'lar ve mentörlük programları düzenliyoruz."
+    },
+    {
+      "id": 5,
+      "question": "Sponsorluk ve iş birliği fırsatları neler?",
+      "answer": "Etkinlik sponsorlukları, eğitim destekleri, staj programları ve teknoloji ortaklıkları gibi çeşitli iş birliği seçeneklerimiz bulunmaktadır. Detaylı bilgi için bizimle iletişime geçin."
+    },
+    {
+      "id": 6,
+      "question": "Online etkinlikleriniz var mı?",
+      "answer": "Evet, hem yüz yüze hem de online etkinlikler düzenliyoruz. Online etkinliklerimiz sayesinde farklı şehirlerden katılımcılar da programlarımıza dahil olabilmektedir."
+    }
+  ],
+  "operatingHours": {
+    "title": "Çalışma Saatleri",
+    "description": "Size daha iyi hizmet verebilmek için aşağıdaki saatlerde ulaşabilirsiniz",
+    "hours": [
+      {
+        "day": "Pazartesi - Cuma",
+        "time": "09:00 - 18:00",
+        "note": "Hafta içi çalışma saatleri"
+      },
+      {
+        "day": "Cumartesi",
+        "time": "10:00 - 16:00",
+        "note": "Etkinlik günleri aktif"
+      },
+      {
+        "day": "Pazar",
+        "time": "Kapalı",
+        "note": "Acil durumlar için e-posta"
+      }
+    ]
+  }
+}

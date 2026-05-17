@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+@theme {
+
+  @keyframes nav-start {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes nav-exit {
+    0% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  --color-background: #ffffff;
+  /* beyaz */
+  --color-foreground: #1e293b;
+  /* slate-800 - metin rengi, daha okunabilir */
+  
+  --color-primary: #1e3a8a;
+  /* blue-900 - daha asil ve derin bir lacivert/mavi */
+  --color-secondary: #0ea5e9;
+  /* sky-500 - modern ve canlı bir aksan rengi */
+  --color-third: #334155;
+  /* slate-700 - yardımcı koyu ton */
+  --color-success: oklch(55% 0.25 135);
+  /* yeşil (doğrulama) */
+  --color-info: #3b82f6;
+  /* blue-500 (bilgilendirme) */
+  --color-danger: oklch(50% 0.28 25);
+  /* kırmızı (alert/uyarı) */
+  
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-foreground-less-op: rgba(44, 62, 126, 0.1);
+  --animate-nav-animate: nav-start 0.4s ease ;
+  --animate-nav-exit: nav-exit 0.4s ease ;
+
+  --breakpoint-xs: 400px;
+  --breakpoint-xls: 550px;
+  --breakpoint-2xl: 1400px;
+
+  --container-padding: 1rem;
+}
+
+
+/* 
+@layer theme {
+  .dark {
+    --color-background: oklch(8% 0.015 250);
+    --color-foreground: oklch(96% 0.005 250);
+
+    --color-primary: oklch(50% 0.22 15);   
+    --color-secondary: oklch(45% 0.17 250);
+    --color-third: oklch(65% 0.20 140);     
+    --color-success: oklch(70% 0.28 135);   
+    --color-info: oklch(72% 0.20 250);      
+    --color-danger: oklch(55% 0.28 25);     
+  }
+}
+*/
+
+@layer base {
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  body {
+    @apply bg-background font-inter text-foreground transition-colors;
+  }
+
+  .container {
+    @apply max-sm:px-[var(--container-padding)] mx-auto max-sm:!max-w-full
+  }
+}
+
+@layer components {
+  .bg-skew {
+    @apply relative after:-skew-4 after:content-[''] after:size-full after:absolute after:-z-10 after:right-0 after:bottom-0;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    @apply bg-transparent
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+    image-rendering: optimizeQuality;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .custom-scroll:hover::-webkit-scrollbar-thumb {
+    @apply bg-foreground/5 rounded-2xl
+  }
+}
+
+@layer utilities {
+
+  /*? FLEX-BOX HELPER UTİLİTY CLASSES  */
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-start {
+    @apply flex justify-start items-center;
+  }
+
+  .flex-end {
+    @apply flex justify-end items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-around {
+    @apply flex justify-around items-center;
+  }
+
+  .col-center {
+    @apply flex flex-col items-center;
+  }
+
+  .col-start {
+    @apply flex flex-col items-start;
+  }
+
+  .col-end {
+    @apply flex flex-col items-end;
+  }
+
+  .row-center {
+    @apply flex flex-row items-center;
+  }
+
+  /*? POSİTİON HELPER UTİLİTY CLASSES  */
+  .position-top {
+    @apply top-0 left-0 right-0;
+  }
+
+  .position-bottom {
+    @apply bottom-0 left-0 right-0;
+  }
+
+  /*? TEXT GRADİENT HELPER UTİLİTY CLASSES  */
+  .text-gradient-b {
+    @apply bg-gradient-to-b text-transparent bg-clip-text;
+  }
+
+  .text-gradient-r {
+    @apply bg-gradient-to-r text-transparent bg-clip-text;
+  }
+
+  .text-gradient-br {
+    @apply bg-gradient-to-br text-transparent bg-clip-text;
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "heroPhoto": {
+    "src": "/public/main.png",
+    "alt": "Gazi Siber Takım Fotoğrafı",
+    "caption": "Gazi Siber Topluluğu Üyeleri"
+  },
+  "missionVisionPhoto": {
+    "src": "/mission-vision-photo.jpg",
+    "alt": "Misyon ve Vizyon Fotoğrafı"
+  },
+  "activityPhotos": {
+    "workshop": {
+      "src": "/public/aboutus/workshop2.jpeg",
+      "alt": "Workshop ve Eğitim Fotoğrafı"
+    },
+    "events": {
+      "src": "/public/aboutus/yarisma.jpeg",
+      "alt": "Etkinlik ve Yarışma Fotoğrafı"
+    },
+    "research": {
+      "src": "/public/aboutus/arastirma_gelistirme2.jpeg",
+      "alt": "Araştırma ve Geliştirme Fotoğrafı"
+    }
+  },
+  "achievementPhotos": [
+    {
+      "src": "/public/aboutus/basari1.jpeg",
+      "alt": "Başarı Fotoğrafı 1",
+      "title": "Başarı 1"
+    },
+    {
+      "src": "/achievement-2.jpg",
+      "alt": "Başarı Fotoğrafı 2",
+      "title": "Başarı 2"
+    },
+    {
+      "src": "/achievement-3.jpg",
+      "alt": "Başarı Fotoğrafı 3",
+      "title": "Başarı 3"
+    },
+    {
+      "src": "/achievement-4.jpg",
+      "alt": "Başarı Fotoğrafı 4",
+      "title": "Başarı 4"
+    }
+  ]
+}

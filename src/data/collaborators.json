@@ -1,0 +1,210 @@
+{
+  "pageInfo": {
+    "title": "Destekçilerimiz",
+    "description": "Gazi Siber Topluluğu'nun başarısına katkı sağlayan değerli destekçilerimiz ve iş ortaklarımız"
+  },
+  "heroSection": {
+    "title": "Destekçilerimiz",
+    "subtitle": "Gazi Siber Topluluğu'nun başarısına katkı sağlayan değerli destekçilerimiz",
+    "heroPhoto": {
+      "src": "/public/main.png",
+      "alt": "Destekçiler ve İş Birliği Fotoğrafı"
+    }
+  },
+  "sections": {
+    "universityPartners": {
+      "title": "Akademik Destekçilerimiz",
+      "description": "Eğitim ve akademik gelişimimize destek olan kurumlarımız"
+    },
+    "industryPartners": {
+      "title": "Sektör Ortaklarımız", 
+      "description": "Deneyim ve uzmanlıklarını bizimle paylaşan sektör liderleri"
+    },
+    "institutionalSupporters": {
+      "title": "Kurumsal Destekçilerimiz",
+      "description": "Eğitim ve gelişim programlarımıza destek veren kurumlarımız"
+    },
+    "supportTypes": {
+      "title": "Destek Türlerimiz",
+      "description": "Destekçilerimizin sağladığı çeşitli destek alanları"
+    },
+    "testimonials": {
+      "title": "Destekçilerimiz Diyor Ki",
+      "description": "Bizimle çalışan kurumların deneyimleri"
+    },
+    "gallery": {
+      "title": "İş Birliği Anlarımız",
+      "description": "Destekçilerimizle birlikte gerçekleştirdiğimiz anlamlı anlar"
+    }
+  },
+  "universityPartners": [
+    {
+      "id": 1,
+      "name": "Gazi Üniversitesi",
+      "type": "Ana Üniversite",
+      "description": "Topluluğumuzun ana destekçisi olan Gazi Üniversitesi, eğitim altyapımızı, akademik kaynaklarımızı ve kampüs olanaklarımızı sağlayarak öğrencilerimizin siber güvenlik alanındaki gelişimini desteklemektedir.",
+      "logo": "/collaborators/gazi.jpg",
+      "website": "https://www.gazi.edu.tr",
+      "color": "from-blue-500/20 to-blue-600/20",
+      "iconColor": "text-blue-400"
+    },
+    {
+      "id": 2,
+      "name": "Teknoloji Fakültesi",
+      "type": "Akademik Fakülte",
+      "description": "Gazi Üniversitesi Teknoloji Fakültesi olarak, siber güvenlik alanında akademik danışmanlık, öğretim üyesi desteği ve laboratuvar imkanları sağlayarak topluluk faaliyetlerimize doğrudan katkıda bulunmaktadır.",
+      "logo": "/collaborators/teknoloji_fak.jpg",
+      "website": "https://www.gazi.edu.tr/fakulteler/teknoloji-fakultesi",
+      "color": "from-green-500/20 to-green-600/20",
+      "iconColor": "text-green-400"
+    }
+  ],
+  "industryPartners": [
+    {
+      "id": 1,
+      "name": "Siberay",
+      "type": "Teknoloji Şirketi",
+      "description": "Siber güvenlik alanında lider olan Siberay, eğitim programlarımıza ve projelerimize sürekli destek sağlayan stratejik ortağımızdır. Uzman kadrosu ile topluluk üyelerimizin profesyonel gelişimine katkıda bulunmaktadır.",
+      "logo": "/siberay-removebg-preview.png",
+      "website": "#",
+      "color": "from-purple-500/20 to-purple-600/20",
+      "iconColor": "text-purple-400"
+    },
+    {
+      "id": 2,
+      "name": "Unides",
+      "type": "Teknoloji Şirketi",
+      "description": "Teknoloji ve inovasyon alanında faaliyet gösteren Unides, topluluk projelerimize destek vererek genç yeteneklerin gelişimine katkı sağlamaktadır.",
+      "logo": "/collaborators/unides.jpg",
+      "website": "#",
+      "color": "from-orange-500/20 to-orange-600/20",
+      "iconColor": "text-orange-400"
+    }
+  ],
+  "institutionalSupporters": [
+    {
+      "id": 1,
+      "name": "INE",
+      "type": "Eğitim Kurumu",
+      "description": "Information Network Academy (INE) olarak bilinen uluslararası eğitim platformu, siber güvenlik alanında kaliteli eğitim içerikleri sunarak topluluk üyelerimizin mesleki gelişimini desteklemektedir.",
+      "logo": "/collaborators/ine_ortaklik.jpg",
+      "website": "#",
+      "color": "from-blue-500/20 to-blue-600/20",
+      "iconColor": "text-blue-400"
+    },
+    {
+      "id": 2,
+      "name": "CTI Academy",
+      "type": "Eğitim Kurumu",
+      "description": "Siber tehdit istihbaratı (Cyber Threat Intelligence) alanında uzmanlaşmış CTI Academy, üyelerimize ileri düzey eğitimler ve sertifika programları sunmaktadır.",
+      "logo": "/collaborators/cti_academy_ortaklik.jpeg",
+      "website": "#",
+      "color": "from-green-500/20 to-green-600/20",
+      "iconColor": "text-green-400"
+    },
+    {
+      "id": 3,
+      "name": "Siber Anadolu Toplulukları",
+      "type": "Topluluk Ağı",
+      "description": "Anadolu'nun çeşitli şehirlerindeki siber güvenlik topluluklarını bir araya getiren bu ağ, bilgi paylaşımı ve ortak projeler konusunda değerli bir ortağımızdır.",
+      "logo": "/collaborators/siber_anadolu_topluluklari_ortaklik.png",
+      "website": "#",
+      "color": "from-red-500/20 to-red-600/20",
+      "iconColor": "text-red-400"
+    }
+  ],
+  "supportTypes": [
+    {
+      "id": 1,
+      "title": "Eğitim Desteği",
+      "description": "Uzman eğitmenler ile workshop ve seminerler",
+      "icon": "education",
+      "details": [
+        "Sektör uzmanlarından eğitimler",
+        "Hands-on workshop'lar",
+        "Sertifikalı kurslar",
+        "Online eğitim platformları"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Teknoloji Desteği",
+      "description": "Modern araçlar ve altyapı sağlanması",
+      "icon": "technology",
+      "details": [
+        "Lisanslı yazılımlar",
+        "Laboratuvar ekipmanları",
+        "Cloud hizmetleri",
+        "Güvenlik araçları"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Kariyer Desteği",
+      "description": "Staj ve iş imkanları sunulması",
+      "icon": "career",
+      "details": [
+        "Staj programları",
+        "İş fırsatları",
+        "Mentörlük hizmetleri",
+        "Kariyer danışmanlığı"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Etkinlik Sponsorluğu",
+      "description": "Yarışma ve etkinliklere maddi destek",
+      "icon": "event",
+      "details": [
+        "CTF yarışmaları sponsorluğu",
+        "Konferans destekleri",
+        "Ödül sponsorlukları",
+        "Etkinlik mekanları"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Prof. Dr. Ahmet Yılmaz",
+      "position": "Bilgisayar Mühendisliği Bölüm Başkanı",
+      "company": "Gazi Üniversitesi",
+      "text": "Gazi Siber Topluluğu, öğrencilerimizin siber güvenlik alanında kendilerini geliştirmeleri için mükemmel bir platform sunuyor.",
+      "avatar": "/testimonials/prof-ahmet.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mehmet Demir",
+      "position": "Siber Güvenlik Uzmanı",
+      "company": "Cyber Security Firması",
+      "text": "Bu topluluk, sektörümüze kaliteli uzmanlar kazandırmada önemli bir rol oynuyor. Desteklemeye devam edeceğiz.",
+      "avatar": "/testimonials/mehmet-demir.jpg"
+    }
+  ],
+  "callToAction": {
+    "title": "Destekçimiz Olmak İster Misiniz?",
+    "description": "Siber güvenlik alanında geleceğin uzmanlarını yetiştirmeye katkı sağlamak istiyorsanız, bizimle iletişime geçin.",
+    "contactEmail": "destek@gazisiber.com",
+    "benefits": [
+      "Kurumsal görünürlük artışı",
+      "Genç yeteneklerle tanışma imkanı",
+      "Sosyal sorumluluk projelerine katkı",
+      "Sektördeki liderlik konumunuzu güçlendirme"
+    ]
+  },
+  "gallery": {
+    "title": "İş Birliği Anlarımız",
+    "photos": [
+      {
+        "src": "/gallery/collaboration-1.jpg",
+        "alt": "İş birliği fotoğrafı 1",
+        "caption": "Lorem ipsum dolor sit amet consectetur"
+      },
+      {
+        "src": "/gallery/collaboration-2.jpg",
+        "alt": "İş birliği fotoğrafı 2",
+        "caption": "Lorem ipsum dolor sit amet consectetur"
+      }
+    ]
+  }
+}
