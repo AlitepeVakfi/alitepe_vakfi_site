@@ -45,7 +45,7 @@ Allah rahmet eylesin. Mekanı cennet, makamı âli olsun.
     },
     'hayati-bice-turk-dunyasi-konferansi': {
       id: 'hayati-bice-turk-dunyasi-konferansi',
-      title: 'Türk Dünyasında Yedevi Hedefleri',
+      title: 'Türk Dünyasında Yesevi Hedefleri',
       speaker: 'Dr. Hayati Bice',
       date: '06.06.2026',
       time: '14:00',
@@ -58,11 +58,11 @@ Allah rahmet eylesin. Mekanı cennet, makamı âli olsun.
       galleryExt: 'jpeg',
       localGallery: true,
       highlight: true,
-      description: `Dr. Hayati Bice'nin Türk dünyasında yedevi hedefleri üzerine gerçekleştirdiği değerli konferans.`,
+      description: `Dr. Hayati Bice'nin Türk dünyasında Yesevi hedefleri üzerine gerçekleştirdiği değerli konferans.`,
       descriptionFull: `
 Ali Tepe Vakfı, değerli düşünür ve yazar Dr. Hayati Bice'yi Türk dünyasının geleceğine dair son derece önemli bir konferans için ağırlamaktan büyük onur duydu.
 
-"Türk Dünyasında Yedevi Hedefleri" başlıklı bu konferansta Dr. Bice, Türk milletinin ortak kültürel ve medeni mirasından hareketle gelecek vizyonunu ele aldı. Yüzyıllık birikimin ışığında şekillenen bu hedefler; birlik, dayanışma, eğitim ve kültürel kimliğin güçlendirilmesi ekseninde tartışıldı.
+"Türk Dünyasında Yesevi Hedefleri" başlıklı bu konferansta Dr. Bice, Türk milletinin ortak kültürel ve medeni mirasından hareketle gelecek vizyonunu ele aldı. Yüzyıllık birikimin ışığında şekillenen bu hedefler; birlik, dayanışma, eğitim ve kültürel kimliğin güçlendirilmesi ekseninde tartışıldı.
 
 Konferans, Türk dünyasının farklı coğrafyalarındaki bağlarına ve bu bağları daha da derinleştirecek adımlara ilişkin önemli perspektifler sundu. Dr. Bice'nin zengin akademik birikimi ve saha deneyimiyle zenginleşen sunum, katılımcılara ilham verici bir bakış açısı kazandırdı.
 

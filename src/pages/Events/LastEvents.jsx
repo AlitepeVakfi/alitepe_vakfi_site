@@ -8,7 +8,7 @@ const LastEvents = () => {
   const events = [
     {
       id: 'hayati-bice-turk-dunyasi-konferansi',
-      title: 'Türk Dünyasında Yedevi Hedefleri',
+      title: 'Türk Dünyasında Yesevi Hedefleri',
       date: '06.06.2026',
       time: '14:00',
       speaker: 'Dr. Hayati Bice',

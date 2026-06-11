@@ -17,11 +17,11 @@ const LastEvents = () => {
           <img
             className="w-full md:w-84 lg:w-96 object-cover rounded-lg"
             src={`${import.meta.env.BASE_URL}events/hayati_bice_konferans/foto_1.jpeg`}
-            alt="Türk Dünyasında Yedevi Hedefler"
+            alt="Türk Dünyasında Yesevi Hedefler"
           />
           <div className="bg-white ps-6 md:ps-12 py-8 pe-6 flex-1 flex flex-col justify-center">
             <h6 className="text-2xl font-semibold mb-3 text-gradient-br from-foreground to-foreground/40">
-              Türk Dünyasında Yedevi Hedefler
+              Türk Dünyasında Yesevi Hedefler
             </h6>
             <div className="row-center gap-3 mb-3">
               <FaCalendarDays size={20} />
@@ -33,7 +33,7 @@ const LastEvents = () => {
               </span>
             </div>
             <p>
-              Araştırmacı yazar Dr. Hayati Bice, Türk dünyasını şekillendiren yedevi geleneğini ve bu geleneğin Türk milletleri için taşıdığı hedefleri derinlemesine ele aldı.
+              Araştırmacı yazar Dr. Hayati Bice, Türk dünyasını şekillendiren Yesevi geleneğini ve bu geleneğin Türk milletleri için taşıdığı hedefleri derinlemesine ele aldı.
             </p>
             <div className="row-center gap-6 mt-4">
               <Link to="/etkinlik/hayati-bice-turk-dunyasi-konferansi">
