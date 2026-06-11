@@ -12,7 +12,44 @@ const LastEvents = () => {
         Etkinlikler
       </h6>
       <div className="col-start gap-12">
-        {/* Ali Tepe Anma Programı - Featured / Newest */}
+        {/* Dr. Hayati Bice Konferansı - En Yeni */}
+        <div className="mx-auto xs:w-[90%] xls:w-[80%] w-full flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden border border-slate-100">
+          <img
+            className="w-full md:w-84 lg:w-96 object-cover rounded-lg"
+            src={`${import.meta.env.BASE_URL}events/hayati_bice_konferans/foto_1.jpeg`}
+            alt="Türk Dünyasında Yedevi Hedefler"
+          />
+          <div className="bg-white ps-6 md:ps-12 py-8 pe-6 flex-1 flex flex-col justify-center">
+            <h6 className="text-2xl font-semibold mb-3 text-gradient-br from-foreground to-foreground/40">
+              Türk Dünyasında Yedevi Hedefler
+            </h6>
+            <div className="row-center gap-3 mb-3">
+              <FaCalendarDays size={20} />
+              06.06.2026 • 14:00
+            </div>
+            <div className="row-center gap-3 mb-3">
+              <span className="font-semibold text-primary">
+                Konuşmacı: Dr. Hayati Bice
+              </span>
+            </div>
+            <p>
+              Araştırmacı yazar Dr. Hayati Bice, Türk dünyasını şekillendiren yedevi geleneğini ve bu geleneğin Türk milletleri için taşıdığı hedefleri derinlemesine ele aldı.
+            </p>
+            <div className="row-center gap-6 mt-4">
+              <Link to="/etkinlik/hayati-bice-turk-dunyasi-konferansi">
+                <Button
+                  className=" hover:-translate-y-1 transition-transform"
+                  colorMode="primary"
+                >
+                  Detaylar
+                  <BiDetail />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Ali Tepe Anma Programı */}
         <div className="mx-auto xs:w-[90%] xls:w-[80%] w-full flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden border border-slate-100">
           <img
             className="w-full md:w-84 lg:w-96 object-cover rounded-lg"

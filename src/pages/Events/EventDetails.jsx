@@ -43,6 +43,34 @@ Allah rahmet eylesin. Mekanı cennet, makamı âli olsun.
       `,
 
     },
+    'hayati-bice-turk-dunyasi-konferansi': {
+      id: 'hayati-bice-turk-dunyasi-konferansi',
+      title: 'Türk Dünyasında Yedevi Hedefleri',
+      speaker: 'Dr. Hayati Bice',
+      date: '06.06.2026',
+      time: '14:00',
+      location: 'Ali Tepe Vakfı Konferans Salonu',
+      type: 'Konferans',
+      coverImage: '/events/hayati_bice_konferans/foto_1.jpeg',
+      localCover: true,
+      galleryFolder: 'hayati_bice_konferans',
+      galleryCount: 8,
+      galleryExt: 'jpeg',
+      localGallery: true,
+      highlight: true,
+      description: `Dr. Hayati Bice'nin Türk dünyasında yedevi hedefleri üzerine gerçekleştirdiği değerli konferans.`,
+      descriptionFull: `
+Ali Tepe Vakfı, değerli düşünür ve yazar Dr. Hayati Bice'yi Türk dünyasının geleceğine dair son derece önemli bir konferans için ağırlamaktan büyük onur duydu.
+
+"Türk Dünyasında Yedevi Hedefleri" başlıklı bu konferansta Dr. Bice, Türk milletinin ortak kültürel ve medeni mirasından hareketle gelecek vizyonunu ele aldı. Yüzyıllık birikimin ışığında şekillenen bu hedefler; birlik, dayanışma, eğitim ve kültürel kimliğin güçlendirilmesi ekseninde tartışıldı.
+
+Konferans, Türk dünyasının farklı coğrafyalarındaki bağlarına ve bu bağları daha da derinleştirecek adımlara ilişkin önemli perspektifler sundu. Dr. Bice'nin zengin akademik birikimi ve saha deneyimiyle zenginleşen sunum, katılımcılara ilham verici bir bakış açısı kazandırdı.
+
+Etkinlik; akademisyenler, araştırmacılar, sivil toplum temsilcileri ve konuya ilgi duyan tüm misafirlerin katılımıyla gerçekleşti. Soru-cevap bölümünde derinleşen tartışmalar, konferansın kalıcı bir iz bırakmasını sağladı.
+
+Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür ediyor, bu tür aydınlatıcı buluşmaları sürdürmeye devam edeceğimizi bildiriyoruz.
+      `,
+    },
     'toplumsal-yasamda-hosgorunun-yeri': {
       id: 'toplumsal-yasamda-hosgorunun-yeri',
       title: 'Toplumsal Yaşamda Hoşgörünün Yeri',
@@ -71,14 +99,17 @@ Allah rahmet eylesin. Mekanı cennet, makamı âli olsun.
     const selectedEvent = events[eventId];
     if (selectedEvent) {
       setEvent(selectedEvent);
-      loadGalleryImages(selectedEvent.galleryFolder, selectedEvent.galleryCount);
+      loadGalleryImages(selectedEvent.galleryFolder, selectedEvent.galleryCount, selectedEvent.galleryExt || 'webp', selectedEvent.localGallery || false);
     }
   }, [eventId]);
 
-  const loadGalleryImages = (folderName, count) => {
+  const loadGalleryImages = (folderName, count, ext = 'webp', local = false) => {
+    const base = local
+      ? `${import.meta.env.BASE_URL}events`
+      : 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events';
     const imageArray = [];
     for (let i = 1; i <= count; i++) {
-      imageArray.push(`https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/${folderName}/foto_${i}.webp`);
+      imageArray.push(`${base}/${folderName}/foto_${i}.${ext}`);
     }
     setGalleryImages(imageArray);
   };
@@ -125,8 +156,10 @@ Allah rahmet eylesin. Mekanı cennet, makamı âli olsun.
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Main Image */}
           <div className="md:col-span-2">
-            <img 
-              src={event.coverImage} 
+            <img
+              src={event.localCover
+                ? `${import.meta.env.BASE_URL}${event.coverImage.replace(/^\//, '')}`
+                : event.coverImage}
               alt={event.title}
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
             />

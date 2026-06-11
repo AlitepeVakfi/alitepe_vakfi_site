@@ -7,6 +7,17 @@ import { Link } from "react-router-dom";
 const LastEvents = () => {
   const events = [
     {
+      id: 'hayati-bice-turk-dunyasi-konferansi',
+      title: 'Türk Dünyasında Yedevi Hedefleri',
+      date: '06.06.2026',
+      time: '14:00',
+      speaker: 'Dr. Hayati Bice',
+      type: 'Konferans',
+      description: 'Dr. Hayati Bice\'nin Türk dünyasının ortak kültürel mirasından hareketle gelecek vizyonunu ele aldığı, birlik, dayanışma ve kültürel kimliğin güçlendirilmesi ekseninde şekillenen değerli konferans.',
+      image: '/events/hayati_bice_konferans/foto_1.jpeg',
+      galleryFolder: 'hayati_bice_konferans'
+    },
+    {
       id: 'ali-tepe-anma-programi',
       title: 'Ali Tepe Vefat Yıl Dönümü Anma Programı',
       date: '18.04.2026',
