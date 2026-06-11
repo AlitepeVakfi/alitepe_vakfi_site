@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toplumsal Yaşamda Hoşgörünün Yeri – Ali Tepe Vakfı</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header id="header" class="header-fixed">
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/logo-removebg-preview.webp" alt="Ali Tepe Vakfı Logo">
+      <span>Ali Tepe Vakfı</span>
+    </a>
+    <nav>
+      <ul class="nav-desktop">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="ali-tepe.html">Ali Tepe Özgeçmiş</a></li>
+        <li><a href="mutevelli-heyeti.html">Mütevelli Heyeti</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="contact.html">İletişim</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="ali-tepe.html">Ali Tepe Özgeçmiş</a></li>
+      <li><a href="mutevelli-heyeti.html">Mütevelli Heyeti</a></li>
+      <li><a href="etkinlikler.html">Etkinlikler</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="event-detail-page pt-header">
+  <div class="container" style="max-width:72rem;">
+
+    <!-- Başlık -->
+    <div class="mb-12">
+      <p class="event-badge">Konferans</p>
+      <h1 class="event-detail-title">Toplumsal Yaşamda Hoşgörünün Yeri</h1>
+      <div class="divider"></div>
+    </div>
+
+    <!-- İçerik Izgarası: kapak + bilgi kartı -->
+    <div class="event-detail-grid">
+      <div>
+        <img
+          class="event-cover"
+          src="https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/konferans_kapak_toplumsal_yasamda_hosgorunun_yeri.webp"
+          alt="Toplumsal Yaşamda Hoşgörünün Yeri"
+        >
+      </div>
+      <div class="event-info-card">
+        <div class="event-info-section">
+          <p class="event-info-label">Konuşmacı</p>
+          <div class="event-info-row">
+            <i class="fa-solid fa-user"></i>
+            <p>Prof. Dr. Mustafa Erdem</p>
+          </div>
+        </div>
+        <div class="event-info-section">
+          <p class="event-info-label">Tarih</p>
+          <div class="event-info-row">
+            <i class="fa-solid fa-calendar-days"></i>
+            <div>
+              <p>01.11.2025</p>
+              <p class="sub" style="color:var(--primary);font-weight:400;font-size:0.875rem;">Saat: 15:00</p>
+            </div>
+          </div>
+        </div>
+        <div class="event-info-section">
+          <p class="event-info-label">Mekan</p>
+          <div class="event-info-row">
+            <i class="fa-solid fa-map-pin"></i>
+            <p style="font-size:0.875rem;font-weight:400;">Ali Tepe Vakfı Konferans Salonu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Etkinlik Hakkında -->
+    <div class="event-about-box">
+      <h2>Etkinlik Hakkında</h2>
+      <p>Toplumsal Yaşamda Hoşgörünün Yeri konferansı, sosyal uyumun sağlanmasında hoşgörünün rolünü incelemektedir.</p>
+      <p>Prof. Dr. Mustafa Erdem tarafından sunulan bu etkinlikte, çok kültürlü toplumlarda barış ve istikrarın nasıl sağlanacağı, hoşgörü kültürünün geliştirilmesi ve sosyal dayanışmanın önemi gibi kritik konular tartışılmıştır.</p>
+      <p>Etkinlik, akademisyenler, öğrenciler ve sosyal sorumluluk faaliyetleriyle ilgilenen bireyler için bir araya gelme fırsatı sunmuştur.</p>
+    </div>
+
+    <!-- Fotoğraf Galerisi -->
+    <div class="event-gallery-section">
+      <h2>Etkinlik Fotoğrafları</h2>
+      <div id="gallery-grid" class="gallery-grid"></div>
+      <div>
+        <button id="gallery-show-more" class="gallery-show-more" style="display:none;"></button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Galeri Modal -->
+<div id="gallery-modal" class="gallery-modal">
+  <div class="gallery-modal-inner">
+    <div id="gallery-counter" class="gallery-modal-counter">1 / 37</div>
+    <button id="gallery-close" class="gallery-modal-close" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button id="gallery-prev" class="gallery-modal-btn gallery-modal-prev" aria-label="Önceki">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <img id="gallery-modal-img" class="gallery-modal-img" src="" alt="Etkinlik fotoğrafı">
+    <button id="gallery-next" class="gallery-modal-btn gallery-modal-next" aria-label="Sonraki">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/logo-removebg-preview.webp" alt="Logo">
+          <span>Ali Tepe Vakfı</span>
+        </div>
+        <p class="footer-desc">Eğitimden sağlığa, sosyal sorumluluktan çevreye uzanan projelerle daha adil ve umut dolu bir gelecek için çalışıyoruz.</p>
+      </div>
+      <div class="footer-right">
+        <h6 class="footer-section-title">Adres</h6>
+        <p class="footer-address">Mithat Paşa Caddesi No: 47 Daire: 3,<br>Kızılay / Çankaya, 06400 Ankara</p>
+        <h6 class="footer-section-title">İletişim</h6>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1CZJ1c2jxJ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://x.com/alitepevakfi?s=21" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/alitepevakfi?igsh=anZ3aWUyN2puYW9r&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy">© 2025 Ali Tepe Vakfı – Tüm Hakları Saklıdır.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="gallery.js"></script>
+<script>
+(function() {
+  var images = [];
+  var base = 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/toplumsal_yasamda_hosgorunun_yeri_konferans/';
+  for (var i = 1; i <= 37; i++) {
+    images.push(base + 'foto_' + i + '.webp');
+  }
+  initGallery(images);
+})();
+</script>
+</body>
+</html>
