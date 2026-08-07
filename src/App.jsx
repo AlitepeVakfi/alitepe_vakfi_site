@@ -17,8 +17,8 @@ function App() {
         <Route path="/mutevelli-heyeti" element={<MutevelliHeyeti />} />
         <Route path="/faaliyetlerimiz" element={<Faaliyetlerimiz />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/etkinlikler" element={<LastEvents />} />
-        <Route path="/etkinlik/:eventId" element={<EventDetails />} />
+        <Route path="/haberler" element={<LastEvents />} />
+        <Route path="/haber/:eventId" element={<EventDetails />} />
       </Route>
     </Routes>
   );

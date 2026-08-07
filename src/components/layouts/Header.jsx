@@ -17,7 +17,7 @@ const Header = () => {
     { text: "Ana Sayfa", href: "/" },
     { text: "Ali Tepe Özgeçmiş", href: "/ali-tepe" },
     { text: "Mütevelli Heyeti", href: "/mutevelli-heyeti" },
-    { text: "Etkinlikler", href: "/etkinlikler" },
+    { text: "Haberler", href: "/haberler" },
     { text: "İletişim", href: "/contact" },
   ];
 
@@ -44,7 +44,7 @@ const Header = () => {
     { key: "home", text: "Ana Sayfa", href: "/" },
     { key: "bio", text: "Ali Tepe Özgeçmiş", href: "/ali-tepe" },
     { key: "board", text: "Mütevelli Heyeti", href: "/mutevelli-heyeti" },
-    { key: "events", text: "Etkinlikler", href: "/etkinlikler" },
+    { key: "events", text: "Haberler", href: "/haberler" },
     { key: "contact", text: "İletişim", href: "/contact" },
   ];
 

@@ -21,14 +21,14 @@ const Hero = () => {
               topluma katkı sağlamak için çalışıyoruz
             </p>
             <div className="row-center  max-xs:!flex-col gap-4 mt-4">
-              <Link to="/etkinlikler">
+              <Link to="/haberler">
                 <Button
                   size="lg"
                   variant="elevated"
                   className="shadow-lg shadow-primary/30 hover:-translate-y-1 transition-transform"
                   colorMode="primary"
                 >
-                  Etkinliklerimiz
+                  Haberlerimiz
                   <GrPlan />
                 </Button>
               </Link>

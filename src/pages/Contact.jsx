@@ -1,22 +1,12 @@
 
-import React, { useState } from 'react'
-import { 
-  FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaPaperPlane,
+import React from 'react'
+import {
+  FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock,
   FaInstagram, FaFacebook, FaTwitter,
-  FaWhatsapp, FaCheckCircle
+  FaWhatsapp
 } from 'react-icons/fa'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    subject: '',
-    phone: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
-  
   const contactMethods = [
     {
       id: 1,
@@ -82,47 +72,6 @@ const Contact = () => {
       color: "from-sky-50 to-sky-100"
     }
   ];
-
-  const subjectOptions = [
-    "Bağış Yapmak İstiyorum",
-    "Gönüllü Olmak İstiyorum",
-    "Yardım Talebi",
-    "Genel Bilgi",
-    "İşbirliği Teklifi",
-    "Diğer"
-  ];
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        fullName: '',
-        email: '',
-        subject: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-      // Clear status after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }
-  };
 
   const ContactMethodCard = ({ method }) => (
     <a 
@@ -202,129 +151,6 @@ const Contact = () => {
             {contactMethods.map((method) => (
               <ContactMethodCard key={method.id} method={method} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-              Bize Ulaşın
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#2c3e7e', opacity: 0.8 }}>
-              Formu doldurarak bizimle iletişime geçebilirsiniz
-            </p>
-          </div>
-
-          <div className="bg-white border-2 border-primary/20 rounded-2xl p-8 shadow-2xl">
-            {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center gap-3">
-                <FaCheckCircle className="text-green-500 text-xl" />
-                <p className="text-green-600 font-medium">Mesajınız başarıyla gönderildi! En kısa sürede size geri dönüş yapacağız.</p>
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                <p className="text-red-600 font-medium">Bir hata oluştu. Lütfen tekrar deneyin.</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#2c3e7e' }}>
-                    Ad Soyad *
-                  </label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    placeholder="Adınızı ve soyadınızı girin"
-                    required
-                    className="w-full px-4 py-3 bg-background border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none transition-colors duration-300"
-                  />
-                </div>
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#2c3e7e' }}>
-                    E-posta Adresi *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="E-posta adresinizi girin"
-                    required
-                    className="w-full px-4 py-3 bg-background border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none transition-colors duration-300"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#2c3e7e' }}>
-                    Konu *
-                  </label>
-                  <select
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none transition-colors duration-300"
-                  >
-                    <option value="">Mesajınızın konusunu seçin</option>
-                    {subjectOptions.map((option, index) => (
-                      <option key={index} value={option}>{option}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#2c3e7e' }}>
-                    Telefon Numarası
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Telefon numaranızı girin (opsiyonel)"
-                    className="w-full px-4 py-3 bg-background border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none transition-colors duration-300"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block font-semibold mb-2" style={{ color: '#2c3e7e' }}>
-                  Mesajınız *
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Mesajınızı detaylı bir şekilde yazın..."
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 bg-background border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none transition-colors duration-300 resize-vertical"
-                />
-              </div>
-
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  style={{ backgroundColor: '#2c3e7e' }}
-                  className="inline-flex items-center gap-3 px-8 py-4 text-white font-semibold rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  <FaPaperPlane className={`${isSubmitting ? 'animate-pulse' : ''}`} />
-                  {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </section>

@@ -15,6 +15,31 @@ const EventDetails = () => {
 
   // Event data
   const events = {
+    'orhan-ziya-diren-cenaze-toreni': {
+      id: 'orhan-ziya-diren-cenaze-toreni',
+      title: 'Mütevelli Heyeti Üyemiz Orhan Ziya Diren\'i Kaybettik',
+      date: '01.08.2026',
+      time: 'İkindi Namazı Sonrası',
+      location: 'Alipaşa Camii, Tokat',
+      type: 'Cenaze Töreni',
+      coverImage: 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/orhan_ziya_diren_cenaze_kapak.webp',
+      galleryFolder: 'orhan_ziya_diren_cenaze_toreni',
+      galleryCount: 9,
+      highlight: true,
+      isAnma: true,
+      description: `Vakfımız mütevelli heyeti asil üyesi, DİREN Holding Onursal Yönetim Kurulu Başkanı ve eski Tokat Milletvekili Orhan Ziya Diren'i kaybetmenin derin üzüntüsünü yaşıyoruz.`,
+      descriptionFull: `
+Vakfımızın mütevelli heyeti asil üyelerinden, DİREN Holding Onursal Yönetim Kurulu Başkanı ve 22. ile 23. Dönem Tokat Milletvekili Orhan Ziya Diren'i kaybetmenin derin üzüntüsü içindeyiz. Merhuma Allah'tan rahmet, ailesine, yakınlarına ve tüm sevenlerine sabır ve başsağlığı diliyoruz.
+
+Ankara'da tedavi gördüğü hastanede vefat eden Orhan Ziya Diren'in naaşı Tokat'a getirildi. Öncelikle DİMES Tokat Fabrikası'nda düzenlenen törenle çalışma arkadaşları ve yakınları tarafından son kez uğurlanan merhum, ardından Tokat Alipaşa Camii'ne getirildi. İkindi namazını müteakip kılınan cenaze namazının ardından Orhan Ziya Diren, Tokat Merkez Erenler Mezarlığı'ndaki aile kabristanında dualarla toprağa verildi.
+
+Cenaze törenine devlet erkanı, iş dünyası temsilcileri, siyasetçiler, vakfımız mütevelli heyeti üyeleri ve çok sayıda vatandaş katılarak merhuma son görevlerini yerine getirdi. Tören boyunca cami avlusuna çok sayıda çelenk gönderildi.
+
+Sanayici ve siyasetçi kimliğiyle Tokat ekonomisine ve Türkiye sanayisine uzun yıllar önemli katkılar sunan, sivil toplum faaliyetleriyle de tanınan Orhan Ziya Diren, vakfımızın mütevelli heyetinde de değerli hizmetler vermiştir. Kendisini saygı, minnet ve rahmetle anıyoruz.
+
+Allah rahmet eylesin. Mekanı cennet, makamı âli olsun.
+      `,
+    },
     'ali-tepe-anma-programi': {
       id: 'ali-tepe-anma-programi',
       title: 'Ali Tepe Vefat Yıl Dönümü Anma Programı',

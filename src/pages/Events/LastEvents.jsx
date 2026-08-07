@@ -7,6 +7,16 @@ import { Link } from "react-router-dom";
 const LastEvents = () => {
   const events = [
     {
+      id: 'orhan-ziya-diren-cenaze-toreni',
+      title: 'Mütevelli Heyeti Üyemiz Orhan Ziya Diren\'i Kaybettik',
+      date: '01.08.2026',
+      time: 'İkindi Namazı Sonrası',
+      type: 'Cenaze Töreni',
+      description: 'Vakfımız mütevelli heyeti asil üyesi, DİREN Holding Onursal Yönetim Kurulu Başkanı ve eski Tokat Milletvekili Orhan Ziya Diren\'i kaybetmenin derin üzüntüsünü yaşıyoruz. Merhum, Tokat Alipaşa Camii\'nde kılınan cenaze namazının ardından Erenler Mezarlığı\'ndaki aile kabristanına defnedildi.',
+      image: 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/orhan_ziya_diren_cenaze_kapak.webp',
+      galleryFolder: 'orhan_ziya_diren_cenaze_toreni'
+    },
+    {
       id: 'hayati-bice-turk-dunyasi-konferansi',
       title: 'Türk Dünyasında Yesevi Hedefleri',
       date: '06.06.2026',
@@ -43,7 +53,7 @@ const LastEvents = () => {
     <div className="min-h-screen bg-white py-20">
       <div className="container my-12">
         <h6 className="text-center mb-16 text-4xl font-semibold text-gradient-br from-foreground to-foreground/40">
-          Etkinlikler
+          Haberler
         </h6>
 
         <div className="col-start gap-12">
@@ -76,7 +86,7 @@ const LastEvents = () => {
                   {event.description}
                 </p>
                 <div className="row-center gap-6 mt-4">
-                  <Link to={`/etkinlik/${event.id}`}>
+                  <Link to={`/haber/${event.id}`}>
                     <Button
                       className=" hover:-translate-y-1 transition-transform"
                       colorMode="primary"
