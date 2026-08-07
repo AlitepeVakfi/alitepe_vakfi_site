@@ -91,7 +91,7 @@ Ali Tepe Vakfı, değerli düşünür ve yazar Dr. Hayati Bice'yi Türk dünyas�
 
 Konferans, Türk dünyasının farklı coğrafyalarındaki bağlarına ve bu bağları daha da derinleştirecek adımlara ilişkin önemli perspektifler sundu. Dr. Bice'nin zengin akademik birikimi ve saha deneyimiyle zenginleşen sunum, katılımcılara ilham verici bir bakış açısı kazandırdı.
 
-Etkinlik; akademisyenler, araştırmacılar, sivil toplum temsilcileri ve konuya ilgi duyan tüm misafirlerin katılımıyla gerçekleşti. Soru-cevap bölümünde derinleşen tartışmalar, konferansın kalıcı bir iz bırakmasını sağladı.
+Konferans; akademisyenler, araştırmacılar, sivil toplum temsilcileri ve konuya ilgi duyan tüm misafirlerin katılımıyla gerçekleşti. Soru-cevap bölümünde derinleşen tartışmalar, konferansın kalıcı bir iz bırakmasını sağladı.
 
 Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür ediyor, bu tür aydınlatıcı buluşmaları sürdürmeye devam edeceğimizi bildiriyoruz.
       `,
@@ -108,10 +108,10 @@ Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür 
       descriptionFull: `
       Toplumsal Yaşamda Hoşgörünün Yeri konferansı, sosyal uyumun sağlanmasında hoşgörünün rolünü incelemektedir. 
       
-      Prof. Dr. Mustafa Erdem tarafından sunulan bu etkinlikte, çok kültürlü toplumlarda barış ve istikrarın nasıl sağlanacağı, 
+      Prof. Dr. Mustafa Erdem tarafından sunulan bu konferansta, çok kültürlü toplumlarda barış ve istikrarın nasıl sağlanacağı,
       hoşgörü kültürünün geliştirilmesi ve sosyal dayanışmanın önemi gibi kritik konular tartışılmıştır.
       
-      Etkinlik, akademisyenler, öğrenciler ve sosyal sorumluluk faaliyetleriyle ilgilenen bireyler için bir araya gelme fırsatı sunmuştur.
+      Konferans, akademisyenler, öğrenciler ve sosyal sorumluluk faaliyetleriyle ilgilenen bireyler için bir araya gelme fırsatı sunmuştur.
       `,
       coverImage: '/events/konferans_kapak_toplumsal_yasamda_hosgorunun_yeri.jpg',
       galleryFolder: 'toplumsal_yasamda_hosgorunun_yeri_konferans',
@@ -140,7 +140,7 @@ Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür 
   };
 
   if (!event) {
-    return <div>Etkinlik bulunamadı</div>;
+    return <div>Haber bulunamadı</div>;
   }
 
   return (
@@ -238,7 +238,7 @@ Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür 
         {/* Description Section */}
         <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 mb-12">
           <h2 className="text-3xl font-bold mb-6 text-primary">
-            Etkinlik Hakkında
+            Haber Hakkında
           </h2>
           <div className="prose prose-lg max-w-none text-primary">
             {event.descriptionFull.split('\n').map((paragraph, idx) => (
@@ -254,7 +254,7 @@ Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür 
         {/* Gallery Section */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-8 text-primary">
-            Etkinlik Fotoğrafları
+            Haber Fotoğrafları
           </h2>
 
           {galleryImages.length > 0 ? (
@@ -272,7 +272,7 @@ Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür 
                   >
                     <img
                       src={image}
-                      alt={`Etkinlik foto ${displayIdx + 1}`}
+                      alt={`Haber foto ${displayIdx + 1}`}
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
