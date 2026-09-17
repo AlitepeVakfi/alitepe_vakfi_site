@@ -144,7 +144,7 @@ const LastEvents = () => {
               </span>
             </div>
             <p>
-              Toplumsal Yaşamda Hoşgörünün Yeri konferansında, Prof. Dr. Mustafa Erdem tarafından sunulan çok-kültürlü toplumlarda sosyal cohesion ve barış konuları ele alınmıştır.
+              Toplumsal Yaşamda Hoşgörünün Yeri konferansında, Prof. Dr. Mustafa Erdem tarafından sunulan çok-kültürlü toplumlarda toplumsal uyum ve barış konuları ele alınmıştır.
             </p>
             <div className="row-center gap-6 mt-4">
               <Link to="/haber/toplumsal-yasamda-hosgorunun-yeri">

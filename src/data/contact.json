@@ -38,37 +38,15 @@
       "id": 1,
       "type": "email",
       "title": "E-posta",
-      "value": "info@gazisiber.com",
+      "value": "iletisim@alitepevakfi.org.tr",
       "description": "Genel sorularınız ve bilgi talepleriniz için",
       "icon": "email",
       "color": "from-blue-500/20 to-blue-600/20",
       "iconColor": "text-blue-400",
-      "link": "mailto:info@gazisiber.com"
+      "link": "mailto:iletisim@alitepevakfi.org.tr"
     },
     {
       "id": 2,
-      "type": "phone",
-      "title": "Telefon",
-      "value": "+90 000 000 0000",
-      "description": "Acil durumlar ve hızlı iletişim için",
-      "icon": "phone",
-      "color": "from-green-500/20 to-green-600/20",
-      "iconColor": "text-green-400",
-      "link": "tel:+900000000000"
-    },
-    {
-      "id": 3,
-      "type": "whatsapp",
-      "title": "WhatsApp",
-      "value": "+90 55x xxx xx xx",
-      "description": "Hızlı mesajlaşma ve anında iletişim için",
-      "icon": "whatsapp",
-      "color": "from-green-500/20 to-green-600/20",
-      "iconColor": "text-green-400",
-      "link": "https://wa.me/905xxxxxxx"
-    },
-    {
-      "id": 4,
       "type": "address",
       "title": "Adres",
       "value": "Gazi Üniversitesi, Teknoloji Fakültesi",
@@ -163,13 +141,6 @@
           "Teknik Destek",
           "Diğer"
         ]
-      },
-      {
-        "name": "phone",
-        "label": "Telefon Numarası",
-        "type": "tel",
-        "placeholder": "Telefon numaranızı girin (opsiyonel)",
-        "required": false
       },
       {
         "name": "message",

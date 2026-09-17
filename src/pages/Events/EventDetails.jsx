@@ -104,7 +104,7 @@ Ali Tepe Vakfı olarak Dr. Hayati Bice'ye değerli katkıları için teşekkür 
       time: '15:00',
       location: 'Ali Tepe Vakfı Konferans Salonu',
       type: 'Konferans',
-      description: `Bu konferansda, Prof. Dr. Mustafa Erdem, modern toplumda hoşgörünün önemi ve sosyal cohesion üzerine detaylı bir sunum yapacaktır.`,
+      description: `Bu konferansta, Prof. Dr. Mustafa Erdem, modern toplumda hoşgörünün önemi ve toplumsal uyum üzerine detaylı bir sunum yapacaktır.`,
       descriptionFull: `
       Toplumsal Yaşamda Hoşgörünün Yeri konferansı, sosyal uyumun sağlanmasında hoşgörünün rolünü incelemektedir. 
       

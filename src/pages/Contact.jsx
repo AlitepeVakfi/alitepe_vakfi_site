@@ -1,9 +1,8 @@
 
 import React from 'react'
 import {
-  FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock,
-  FaInstagram, FaFacebook, FaTwitter,
-  FaWhatsapp
+  FaEnvelope, FaMapMarkerAlt, FaClock,
+  FaInstagram, FaFacebook, FaTwitter
 } from 'react-icons/fa'
 
 const Contact = () => {
@@ -12,31 +11,13 @@ const Contact = () => {
       id: 1,
       icon: <FaEnvelope className="text-3xl" />,
       title: "E-posta",
-      value: "alitepevakfi@gmail.com",
+      value: "iletisim@alitepevakfi.org.tr",
       description: "7/24 mesaj gönderebilirsiniz",
-      link: "mailto:alitepevakfi@gmail.com",
+      link: "mailto:iletisim@alitepevakfi.org.tr",
       color: "from-blue-50 to-blue-100"
     },
     {
       id: 2,
-      icon: <FaPhone className="text-3xl" />,
-      title: "Telefon",
-      value: "+90 537 925 88 32",
-      description: "Hafta içi 09:00 - 18:00",
-      link: "tel:+905379258832",
-      color: "from-green-50 to-green-100"
-    },
-    {
-      id: 3,
-      icon: <FaWhatsapp className="text-3xl" />,
-      title: "WhatsApp",
-      value: "+90 537 925 88 32",
-      description: "Hızlı destek hattı",
-      link: "https://wa.me/905379258832",
-      color: "from-emerald-50 to-emerald-100"
-    },
-    {
-      id: 4,
       icon: <FaMapMarkerAlt className="text-3xl" />,
       title: "Adres",
       value: "Ankara, Türkiye",
@@ -73,11 +54,14 @@ const Contact = () => {
     }
   ];
 
-  const ContactMethodCard = ({ method }) => (
+  const ContactMethodCard = ({ method }) => {
+    const isExternal = method.link.startsWith('http');
+
+    return (
     <a 
       href={method.link}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={`group relative bg-gradient-to-br ${method.color} border-2 border-primary/20 rounded-2xl p-8 hover:border-primary/40 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-2xl cursor-pointer block`}
     >
       <div className="text-center">
@@ -95,7 +79,8 @@ const Contact = () => {
         </p>
       </div>
     </a>
-  );
+    );
+  };
 
   const SocialMediaCard = ({ social }) => (
     <a 
@@ -147,7 +132,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {contactMethods.map((method) => (
               <ContactMethodCard key={method.id} method={method} />
             ))}

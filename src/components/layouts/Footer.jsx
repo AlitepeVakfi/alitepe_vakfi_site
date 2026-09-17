@@ -1,23 +1,7 @@
 import React from "react";
-import { FaInstagram, FaFacebook, FaXTwitter } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebook, FaXTwitter, FaEnvelope } from "react-icons/fa6";
 
 const Footer = () => {
-  const links = [
-    {
-      text: "Ali Tepe",
-      href: "/ali-tepe",
-    },
-    {
-      text: "Mütevelli Heyeti",
-      href: "/mutevelli-heyeti",
-    },
-    {
-      text: "İletişim",
-      href: "/contact",
-    },
-  ];
-
   return (
     <footer className="py-6 px-4" style={{ backgroundColor: '#2a3c7e' }}>
       <div className="container">
@@ -44,6 +28,14 @@ const Footer = () => {
               <div className="italic" style={{ color: '#dee3df' }}>Mithat Paşa Caddesi No: 47 Daire: 3, Kızılay / Çankaya, 06400 Ankara</div>
 
               <h6 className="font-semibold text-lg mt-3" style={{ color: '#dee3df' }}>İletişim</h6>
+              <a
+                href="mailto:iletisim@alitepevakfi.org.tr"
+                className="inline-flex items-center gap-2 mt-2 hover:underline w-fit"
+                style={{ color: '#dee3df' }}
+              >
+                <FaEnvelope size={16} />
+                iletisim@alitepevakfi.org.tr
+              </a>
               <div className="row-center gap-3 my-4">
                 <a href="https://www.facebook.com/share/1CZJ1c2jxJ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="rounded-full inset-shadow-sm p-3 border hover:bg-white/10 transition-colors" style={{ borderColor: '#dee3df', color: '#dee3df' }}>
                   <FaFacebook size={20} />

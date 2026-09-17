@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaCalendarDays } from "react-icons/fa6";
 import Button from "../../components/ui/Button";
 import { BiDetail } from "react-icons/bi";
@@ -43,7 +43,7 @@ const LastEvents = () => {
       date: '01.11.2025',
       time: '15:00',
       speaker: 'Prof. Dr. Mustafa Erdem',
-      description: 'Toplumsal Yaşamda Hoşgörünün Yeri konferansında, Prof. Dr. Mustafa Erdem tarafından sunulan çok-kültürlü toplumlarda sosyal cohesion ve barış konuları ele alınmıştır.',
+      description: 'Toplumsal Yaşamda Hoşgörünün Yeri konferansında, Prof. Dr. Mustafa Erdem tarafından sunulan çok-kültürlü toplumlarda toplumsal uyum ve barış konuları ele alınmıştır.',
       image: 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/konferans_kapak_toplumsal_yasamda_hosgorunun_yeri.webp',
       galleryFolder: 'toplumsal_yasamda_hosgorunun_yeri_konferans'
     }
