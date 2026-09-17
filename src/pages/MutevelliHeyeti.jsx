@@ -1,205 +1,118 @@
-import React from 'react';
-import { FaUsers } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { LuArrowRight } from 'react-icons/lu';
+import PageHeader from '../components/ui/PageHeader';
+import Reveal from '../components/ui/Reveal';
+import Portrait from '../components/ui/Portrait';
+import SectionHeading from '../components/ui/SectionHeading';
+import { GlobeMark } from '../components/ui/Ornaments';
+import { chairman, founder, members } from '../data/board';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const MutevelliHeyeti = () => {
-  // Ali Tepe - Founder
-  const founder = {
-    id: 1,
-    name: "Ali Tepe",
-    title: "Kurucu Başkanı",
-    profession: "İş Adamı",
-    years: "(1930-2017)",
-    photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/ali-tepe.webp",
-    memorial: "Vakıf kurucusu ve başkanımız 09/03/2017 tarihinde vefat etmiştir. Sevgisi yüreğimizde sonsuza dek yaşayacaktır. Mekanı cennet olsun."
-  };
-
-  // Board Members
-  const members = [
-    {
-      id: 2,
-      name: "Reşat Doğru",
-      title: "Mütevelli Yönetim Kurulu Başkanı",
-      profession: "Doktor - Eski Bakan",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/resat-dogru.webp"
-    },
-    {
-      id: 3,
-      name: "Ali Kaya",
-      title: "Asil Üye",
-      profession: "Avukat",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/ali-kaya.webp"
-    },
-    {
-      id: 4,
-      name: "Prof. Dr. Mustafa Erdem",
-      title: "Asil Üye",
-      profession: "Eski Milletvekili",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/mustafa-erdem.webp"
-    },
-    {
-      id: 5,
-      name: "Hasan Çalış",
-      title: "Asil Üye",
-      profession: "Doktor - Eski Milletvekili",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/hasan-calis.webp"
-    },
-    {
-      id: 6,
-      name: "Yaşar Karaaslan",
-      title: "Asil Üye",
-      profession: "Emekli Yönetici",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/yasar-karaaslan.webp"
-    },
-    {
-      id: 7,
-      name: "Orhan Ziya Diren",
-      title: "Asil Üye",
-      profession: "Eski Milletvekili - Ticaret",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/orhan-ziya-diren.webp"
-    },
-    {
-      id: 8,
-      name: "Mustafa Baş",
-      title: "Asil Üye",
-      profession: "Başmüfettiş",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/mustafa-bas.webp"
-    },
-    {
-      id: 9,
-      name: "Süha Şen",
-      title: "Asil Üye",
-      profession: "Uzman Doktor",
-      photo: "https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/members/mutevelli/suha-sen.webp"
-    }
-  ];
-
-  const FounderCard = ({ member }) => {
-    return (
-      <div className="max-w-4xl mx-auto mb-20">
-        <div className="bg-gradient-to-br from-amber-50 to-background border-2 border-amber-300/50 rounded-3xl p-8 md:p-12 shadow-2xl">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Photo */}
-            <div className="relative">
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-amber-400/50 shadow-xl">
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.src = '/logo-removebg-preview.png';
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Info */}
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#2c3e7e' }}>
-                {member.name}
-              </h2>
-              <p className="text-xl font-semibold text-amber-700 mb-2">
-                {member.title}
-              </p>
-              <p className="text-lg mb-2" style={{ color: '#2c3e7e' }}>
-                {member.profession}
-              </p>
-              <p className="text-lg font-medium text-gray-600 mb-4">
-                {member.years}
-              </p>
-              <div className="bg-white/80 rounded-xl p-4 border border-amber-300/50">
-                <p className="text-sm md:text-base italic leading-relaxed" style={{ color: '#2c3e7e' }}>
-                  {member.memorial}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const MemberCard = ({ member }) => {
-    return (
-      <div className="group relative bg-white border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
-        {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
-        <div className="relative z-10">
-          {/* Photo */}
-          <div className="mb-6">
-            <div className="relative mx-auto w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
-              <img
-                src={member.photo}
-                alt={member.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                onError={(e) => {
-                  e.target.src = '/logo-removebg-preview.png';
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Info */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-2" style={{ color: '#2c3e7e' }}>
-              {member.name}
-            </h3>
-            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full mb-3">
-              <span className="text-sm font-semibold">{member.title}</span>
-            </div>
-            
-            <p className="font-medium mt-2" style={{ color: '#2c3e7e' }}>
-              {member.profession}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  useDocumentTitle('Mütevelli Heyeti');
 
   return (
-    <div className="min-h-screen bg-background py-16 px-4">
-      <div className="container mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <FaUsers className="w-12 h-12 text-primary" />
+    <>
+      <PageHeader
+        breadcrumbs={[{ label: 'Mütevelli Heyeti' }]}
+        eyebrow="Kurumsal"
+        title="Mütevelli Heyeti"
+        description="Ali Tepe Vakfı'nı yöneten ve yol gösteren değerli mütevelli heyeti üyelerimiz."
+      />
+
+      <section className="py-16 sm:py-24">
+        <div className="wrapper space-y-24">
+          <Reveal>
+            <article className="relative isolate grid items-center gap-8 overflow-hidden rounded-[2rem] bg-white p-8 text-center ring-1 ring-line sm:grid-cols-[auto_1fr] sm:gap-12 sm:p-12 sm:text-left">
+              <GlobeMark className="pointer-events-none absolute -right-28 -bottom-40 -z-10 w-[28rem] text-brand-900/[0.05]" />
+              <Portrait
+                src={founder.photo}
+                alt={founder.name}
+                focus={founder.focus}
+                zoom={founder.zoom}
+                className="mx-auto size-44 ring-8 ring-paper sm:size-52"
+              />
+              <div>
+                <p className="eyebrow text-accent-700">{founder.title}</p>
+                <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-brand-950 sm:text-5xl">
+                  {founder.name}
+                </h2>
+                <p className="mt-2 text-muted">
+                  {founder.profession} · {founder.years}
+                </p>
+                <p className="mt-6 max-w-2xl font-serif text-xl leading-relaxed text-ink/80 italic">
+                  {founder.memorial}
+                </p>
+                <Link to="/ali-tepe" className="link-arrow mt-7">
+                  Hayat hikâyesini okuyun
+                  <LuArrowRight className="size-4" />
+                </Link>
+              </div>
+            </article>
+          </Reveal>
+
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <Reveal className="lg:col-span-5">
+              <SectionHeading
+                eyebrow="Yönetim"
+                title="Heyet Başkanımız"
+                description="Mütevelli heyeti, vakfın amaçları doğrultusunda çalışmalarına yön veren ve faaliyetlerini gözeten kuruldur."
+              />
+            </Reveal>
+            <Reveal delay={100} className="lg:col-span-7">
+              <article className="relative isolate flex flex-col items-center gap-7 overflow-hidden rounded-[2rem] bg-brand-950 p-8 text-center text-white sm:flex-row sm:p-10 sm:text-left">
+                <GlobeMark className="pointer-events-none absolute -top-24 -right-24 -z-10 w-80 text-white/[0.06]" />
+                <Portrait
+                  src={chairman.photo}
+                  alt={chairman.name}
+                  focus={chairman.focus}
+                  zoom={chairman.zoom}
+                  className="size-36 ring-4 ring-white/10"
+                />
+                <div>
+                  <span className="inline-flex rounded-full bg-accent-400/15 px-3 py-1 text-xs font-semibold text-accent-200">
+                    {chairman.title}
+                  </span>
+                  <h3 className="mt-4 font-serif text-4xl font-medium tracking-tight">{chairman.name}</h3>
+                  <p className="mt-2 text-white/65">{chairman.profession}</p>
+                </div>
+              </article>
+            </Reveal>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-            Mütevelli Heyeti
-          </h1>
-          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#2c3e7e' }}>
-            Ali Tepe Vakfı'nı yöneten ve yol gösteren değerli mütevelli heyet üyelerimiz
-          </p>
+
+          <div>
+            <Reveal>
+              <SectionHeading eyebrow="Asil Üyeler" title="Heyet Üyelerimiz" />
+            </Reveal>
+            <ul className="mt-12 flex flex-wrap justify-center gap-5">
+              {members.map((member, index) => (
+                <Reveal
+                  as="li"
+                  key={member.name}
+                  delay={(index % 4) * 80}
+                  className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]"
+                >
+                  <article className="group flex h-full flex-col items-center rounded-3xl bg-white px-6 pt-9 pb-8 text-center ring-1 ring-line transition-[box-shadow,translate] duration-500 hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgb(15_24_52/0.4)]">
+                    <Portrait
+                      src={member.photo}
+                      alt={member.name}
+                      focus={member.focus}
+                      zoom={member.zoom}
+                      className="size-28 ring-4 ring-paper outline outline-line"
+                    />
+                    <h3 className="mt-6 font-serif text-xl font-medium text-brand-950">{member.name}</h3>
+                    <p className="mt-1.5 text-sm text-muted">{member.profession}</p>
+                    <span className="mt-5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                      {member.title}
+                    </span>
+                  </article>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
         </div>
-
-        {/* Founder Card - Ali Tepe */}
-        <FounderCard member={founder} />
-
-        {/* President Header */}
-        <h2 className="text-3xl font-bold text-center mb-8" style={{ color: '#2c3e7e' }}>
-          Başkan
-        </h2>
-
-        {/* President Card - Reşat Doğru */}
-        <div className="max-w-2xl mx-auto mb-16">
-          <MemberCard member={members[0]} />
-        </div>
-
-        {/* Board Members Header */}
-        <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#2c3e7e' }}>
-          Mütevelli Heyeti Üyeleri
-        </h2>
-
-        {/* Board Members Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {members.slice(1).map((member) => (
-            <MemberCard key={member.id} member={member} />
-          ))}
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

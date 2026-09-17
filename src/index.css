@@ -1,109 +1,132 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
-/* @custom-variant dark (&:where(.dark, .dark *)); */
+/*
+ * Tasarım sistemi — renkler vakıf logosundan türetildi:
+ *   brand  → logo halkasının laciverdi (#2a3c80)
+ *   accent → logodaki dünya küresinin turkuaz mavisi (#00a3c0)
+ */
+@theme static {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-inter: var(--font-sans);
 
-@theme {
+  --color-brand-50: #f3f5fb;
+  --color-brand-100: #e4e9f5;
+  --color-brand-200: #c9d2ea;
+  --color-brand-300: #a1b0d8;
+  --color-brand-400: #7087be;
+  --color-brand-500: #4d65a6;
+  --color-brand-600: #3a4f92;
+  --color-brand-700: #2a3c80;
+  --color-brand-800: #223168;
+  --color-brand-900: #1b2753;
+  --color-brand-950: #0f1834;
 
-  @keyframes nav-start {
-    0% {
-      transform: translateY(-100%);
-    }
+  --color-accent-50: #ebfafc;
+  --color-accent-100: #cdf1f6;
+  --color-accent-200: #a2e3ed;
+  --color-accent-300: #66cfe0;
+  --color-accent-400: #25b7cf;
+  --color-accent-500: #00a3c0;
+  --color-accent-600: #0087a7;
+  --color-accent-700: #096c87;
+  --color-accent-800: #0f586d;
+  --color-accent-900: #11495b;
 
-    100% {
-      transform: translateY(0%);
-    }
-  }
+  /* Nötrler: hafif sıcak kâğıt tonu */
+  --color-paper: #f8f7f3;
+  --color-sand: #efece4;
+  --color-line: #e3dfd5;
+  --color-ink: #151d34;
+  --color-muted: #5a6276;
 
-  @keyframes nav-exit {
-    0% {
-      transform: translateY(0%);
-    }
-
-    100% {
-      transform: translateY(-100%);
-    }
-  }
-
-  @keyframes gradient-shift {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
+  /* Eski bileşenlerin kullandığı adlar (geriye dönük uyumluluk) */
   --color-background: #ffffff;
-  /* beyaz */
-  --color-foreground: #1e293b;
-  /* slate-800 - metin rengi, daha okunabilir */
-  
-  --color-primary: #1e3a8a;
-  /* blue-900 - daha asil ve derin bir lacivert/mavi */
-  --color-secondary: #0ea5e9;
-  /* sky-500 - modern ve canlı bir aksan rengi */
+  --color-foreground: #151d34;
+  --color-primary: #2a3c80;
+  --color-secondary: #0087a7;
   --color-third: #334155;
-  /* slate-700 - yardımcı koyu ton */
   --color-success: oklch(55% 0.25 135);
-  /* yeşil (doğrulama) */
   --color-info: #3b82f6;
-  /* blue-500 (bilgilendirme) */
   --color-danger: oklch(50% 0.28 25);
-  /* kırmızı (alert/uyarı) */
-  
-  --font-inter: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  
-  --color-foreground-less-op: rgba(44, 62, 126, 0.1);
-  --animate-nav-animate: nav-start 0.4s ease ;
-  --animate-nav-exit: nav-exit 0.4s ease ;
 
   --breakpoint-xs: 400px;
   --breakpoint-xls: 550px;
   --breakpoint-2xl: 1400px;
 
-  --container-padding: 1rem;
+  --animate-hero-zoom: hero-zoom 2.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade-in: fade-in 0.35s ease-out both;
 }
 
-
-/* 
-@layer theme {
-  .dark {
-    --color-background: oklch(8% 0.015 250);
-    --color-foreground: oklch(96% 0.005 250);
-
-    --color-primary: oklch(50% 0.22 15);   
-    --color-secondary: oklch(45% 0.17 250);
-    --color-third: oklch(65% 0.20 140);     
-    --color-success: oklch(70% 0.28 135);   
-    --color-info: oklch(72% 0.20 250);      
-    --color-danger: oklch(55% 0.28 25);     
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
   }
 }
-*/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@utility wrapper {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    /* Türkçede "fı/fi" ayrımı bozulmasın diye standart bitişik harfler kapalı */
+    font-variant-ligatures: no-common-ligatures;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-200);
+    color: var(--color-brand-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
 
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
@@ -112,28 +135,169 @@
     transition: background-color 5000s ease-in-out 0s;
   }
 
-  body {
-    @apply bg-background font-inter text-foreground transition-colors;
-  }
-
   .container {
-    @apply max-sm:px-[var(--container-padding)] mx-auto max-sm:!max-w-full
+    @apply max-sm:px-4 mx-auto max-sm:!max-w-full;
   }
 }
 
 @layer components {
-  .bg-skew {
-    @apply relative after:-skew-4 after:content-[''] after:size-full after:absolute after:-z-10 after:right-0 after:bottom-0;
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.7;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    border-radius: 9999px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      box-shadow 0.3s,
+      transform 0.2s;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn .btn-arrow {
+    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  .btn:hover .btn-arrow-down {
+    transform: translateY(2px);
+  }
+
+  .btn-primary {
+    background-color: var(--color-brand-700);
+    color: #fff;
+    box-shadow: 0 12px 24px -14px rgb(42 60 128 / 0.8);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-brand-800);
+  }
+
+  .btn-light {
+    background-color: #fff;
+    color: var(--color-brand-900);
+    box-shadow: 0 12px 24px -14px rgb(0 0 0 / 0.5);
+  }
+
+  .btn-light:hover {
+    background-color: var(--color-accent-50);
+  }
+
+  .btn-ghost-light {
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.35);
+  }
+
+  .btn-ghost-light:hover {
+    background-color: rgb(255 255 255 / 0.1);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.7);
+  }
+
+  .btn-outline {
+    background-color: #fff;
+    color: var(--color-brand-800);
+    box-shadow: inset 0 0 0 1px var(--color-line);
+  }
+
+  .btn-outline:hover {
+    color: var(--color-brand-950);
+    box-shadow: inset 0 0 0 1px var(--color-brand-300);
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-accent-700);
+    transition: color 0.3s;
+  }
+
+  .link-arrow:hover {
+    color: var(--color-brand-800);
+  }
+
+  .link-arrow svg {
+    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .link-arrow:hover svg:last-child {
+    transform: translateX(4px);
+  }
+
+  .link-arrow:hover svg:first-child:not(:last-child) {
+    transform: translateX(-4px);
+  }
+
+  /* Kaydırınca beliren içerik — bkz. components/ui/Reveal.jsx */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .pulse-path {
+    stroke-dasharray: 1;
+    animation: pulse-draw 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s both;
+  }
+
+  .drop-cap::first-letter {
+    float: left;
+    margin: 0.16em 0.12em 0 0;
+    font-family: var(--font-serif);
+    font-size: 3.7em;
+    font-weight: 500;
+    line-height: 0.8;
+    color: var(--color-brand-700);
   }
 
   .custom-scroll::-webkit-scrollbar-thumb {
-    @apply bg-transparent
+    @apply bg-transparent;
   }
 
   .custom-scroll::-webkit-scrollbar {
     background-color: transparent;
     width: 5px;
-    image-rendering: optimizeQuality;
   }
 
   .custom-scroll::-webkit-scrollbar-track {
@@ -141,12 +305,29 @@
   }
 
   .custom-scroll:hover::-webkit-scrollbar-thumb {
-    @apply bg-foreground/5 rounded-2xl
+    @apply bg-foreground/5 rounded-2xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pulse-path,
+  .animate-hero-zoom,
+  .animate-fade-in {
+    animation: none;
   }
 }
 
 @layer utilities {
-
   /*? FLEX-BOX HELPER UTİLİTY CLASSES  */
   .flex-center {
     @apply flex justify-center items-center;
@@ -182,15 +363,6 @@
 
   .row-center {
     @apply flex flex-row items-center;
-  }
-
-  /*? POSİTİON HELPER UTİLİTY CLASSES  */
-  .position-top {
-    @apply top-0 left-0 right-0;
-  }
-
-  .position-bottom {
-    @apply bottom-0 left-0 right-0;
   }
 
   /*? TEXT GRADİENT HELPER UTİLİTY CLASSES  */

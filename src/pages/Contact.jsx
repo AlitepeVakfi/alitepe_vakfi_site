@@ -1,230 +1,189 @@
-
-import React from 'react'
+import { useEffect, useState } from 'react'
 import {
-  FaEnvelope, FaMapMarkerAlt, FaClock,
-  FaInstagram, FaFacebook, FaTwitter
-} from 'react-icons/fa'
+  LuArrowUpRight,
+  LuCheck,
+  LuClock,
+  LuCopy,
+  LuMail,
+  LuMapPin,
+  LuNavigation,
+} from 'react-icons/lu'
+import PageHeader from '../components/ui/PageHeader'
+import Reveal from '../components/ui/Reveal'
+import { SocialIcon } from '../components/ui/SocialLinks'
+import { mapLinks, site, socialLinks } from '../data/site'
+import useDocumentTitle from '../hooks/useDocumentTitle'
+import { cn } from '../libs/utils'
+
+const CardTitle = ({ icon, children }) => {
+  const Icon = icon
+  return (
+    <div className="flex items-center gap-3">
+      <span className="grid size-11 place-items-center rounded-2xl bg-brand-50 text-brand-700">
+        <Icon className="size-5" aria-hidden="true" />
+      </span>
+      <h2 className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">{children}</h2>
+    </div>
+  )
+}
 
 const Contact = () => {
-  const contactMethods = [
-    {
-      id: 1,
-      icon: <FaEnvelope className="text-3xl" />,
-      title: "E-posta",
-      value: "iletisim@alitepevakfi.org.tr",
-      description: "7/24 mesaj gönderebilirsiniz",
-      link: "mailto:iletisim@alitepevakfi.org.tr",
-      color: "from-blue-50 to-blue-100"
-    },
-    {
-      id: 2,
-      icon: <FaMapMarkerAlt className="text-3xl" />,
-      title: "Adres",
-      value: "Ankara, Türkiye",
-      description: "Vakıf merkez ofisi",
-      link: "https://maps.google.com/maps?q=Mithat+Paşa+Caddesi+No+47+Daire+3+Ankara",
-      color: "from-red-50 to-red-100"
+  useDocumentTitle('İletişim')
+  const [copied, setCopied] = useState(false)
+  const today = new Date().getDay()
+
+  useEffect(() => {
+    if (!copied) return
+    const timeout = setTimeout(() => setCopied(false), 2000)
+    return () => clearTimeout(timeout)
+  }, [copied])
+
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(`${site.fullName}, ${site.address.lines.join(', ')}`)
+      setCopied(true)
+    } catch {
+      // Pano erişimi yoksa (eski tarayıcı, izin yok) sessizce geç
     }
-  ];
-
-  const socialMediaAccounts = [
-    {
-      id: 1,
-      platform: "Instagram",
-      username: "@alitepevakfi",
-      url: "https://instagram.com/alitepevakfi",
-      icon: <FaInstagram className="text-3xl" />,
-      color: "from-pink-50 to-purple-100"
-    },
-    {
-      id: 2,
-      platform: "Facebook",
-      username: "Ali Tepe Vakfı",
-      url: "https://facebook.com/alitepevakfi",
-      icon: <FaFacebook className="text-3xl" />,
-      color: "from-blue-50 to-blue-100"
-    },
-    {
-      id: 3,
-      platform: "Twitter",
-      username: "@alitepevakfi",
-      url: "https://twitter.com/alitepevakfi",
-      icon: <FaTwitter className="text-3xl" />,
-      color: "from-sky-50 to-sky-100"
-    }
-  ];
-
-  const ContactMethodCard = ({ method }) => {
-    const isExternal = method.link.startsWith('http');
-
-    return (
-    <a 
-      href={method.link}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
-      className={`group relative bg-gradient-to-br ${method.color} border-2 border-primary/20 rounded-2xl p-8 hover:border-primary/40 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-2xl cursor-pointer block`}
-    >
-      <div className="text-center">
-        <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-          {method.icon}
-        </div>
-        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300" style={{ color: '#2c3e7e' }}>
-          {method.title}
-        </h3>
-        <p className="font-medium mb-2" style={{ color: '#2c3e7e' }}>
-          {method.value}
-        </p>
-        <p className="text-sm" style={{ color: '#2c3e7e', opacity: 0.7 }}>
-          {method.description}
-        </p>
-      </div>
-    </a>
-    );
-  };
-
-  const SocialMediaCard = ({ social }) => (
-    <a 
-      href={social.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`group relative bg-gradient-to-br ${social.color} border-2 border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-2xl cursor-pointer block`}
-    >
-      <div className="text-center">
-        <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-          {social.icon}
-        </div>
-        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300" style={{ color: '#2c3e7e' }}>
-          {social.platform}
-        </h3>
-        <p className="text-sm font-medium" style={{ color: '#2c3e7e', opacity: 0.8 }}>
-          {social.username}
-        </p>
-      </div>
-    </a>
-  );
+  }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#2c3e7e' }}>
-            İletişim
-          </h1>
-          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#2c3e7e' }}>
-            Ali Tepe Vakfı ile iletişime geçin, sorularınızı sorun veya 
-            bizimle işbirliği yapın. Size yardımcı olmaktan mutluluk duyarız.
-          </p>
-        </div>
-      </section>
+    <>
+      <PageHeader
+        breadcrumbs={[{ label: 'İletişim' }]}
+        eyebrow="Bize Ulaşın"
+        title="İletişim"
+        description="Ali Tepe Vakfı ile iletişime geçin, sorularınızı sorun veya bizimle iş birliği yapın. Size yardımcı olmaktan mutluluk duyarız."
+      />
 
-      {/* Contact Methods */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-              İletişim Bilgileri
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#2c3e7e', opacity: 0.8 }}>
-              Bizimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz
-            </p>
-          </div>
+      <section className="py-16 sm:py-24">
+        <div className="wrapper grid gap-5 lg:grid-cols-12">
+          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
+            <Reveal>
+              <a
+                href={`mailto:${site.email}`}
+                className="group relative isolate flex h-full flex-col overflow-hidden rounded-3xl bg-brand-800 p-6 text-white sm:p-8"
+              >
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 bg-[radial-gradient(30rem_20rem_at_100%_100%,rgb(0_163_192/0.35),transparent_60%),linear-gradient(135deg,var(--color-brand-800),var(--color-brand-950))]"
+                />
+                <span className="grid size-11 place-items-center rounded-2xl bg-white/10 text-accent-200">
+                  <LuMail className="size-5" aria-hidden="true" />
+                </span>
+                <h2 className="mt-8 text-xs font-semibold tracking-[0.16em] text-white/60 uppercase">E-posta</h2>
+                <p className="mt-2 font-serif text-[1.3rem] leading-tight [overflow-wrap:anywhere] sm:text-[1.75rem]">{site.email}</p>
+                <p className="mt-3 text-white/60">7/24 mesaj gönderebilirsiniz.</p>
+                <span className="mt-8 inline-flex items-center gap-2 font-semibold text-accent-200">
+                  E-posta gönderin
+                  <LuArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </a>
+            </Reveal>
 
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {contactMethods.map((method) => (
-              <ContactMethodCard key={method.id} method={method} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Media */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-              Sosyal Medya
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#2c3e7e', opacity: 0.8 }}>
-              Sosyal medya hesaplarımızdan bizi takip edin
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {socialMediaAccounts.map((social) => (
-              <SocialMediaCard key={social.id} social={social} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Map / Office Info */}
-      <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-              Ofis Bilgileri
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-start gap-4 mb-6">
-                <FaClock className="text-3xl text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-                    Çalışma Saatleri
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center py-2 border-b border-primary/10">
-                      <span style={{ color: '#2c3e7e' }}>Pazartesi - Cuma</span>
-                      <span className="font-bold text-primary">09:00 - 18:00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-primary/10">
-                      <span style={{ color: '#2c3e7e' }}>Cumartesi</span>
-                      <span className="font-bold text-primary">09:00 - 14:00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span style={{ color: '#2c3e7e' }}>Pazar</span>
-                      <span className="font-bold" style={{ color: '#2c3e7e', opacity: 0.6 }}>Kapalı</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-start gap-4">
-                <FaMapMarkerAlt className="text-3xl text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#2c3e7e' }}>
-                    Adres
-                  </h3>
-                  <p className="text-lg leading-relaxed mb-4" style={{ color: '#2c3e7e' }}>
-                    Ali Tepe Vakfı<br />
-                    Mithat Paşa Caddesi No: 47 Daire: 3<br />
-                    Kızılay / Çankaya, 06400 Ankara
-                  </p>
-                  <a 
-                    href="https://maps.google.com/maps?q=Mithat+Paşa+Caddesi+No+47+Daire+3+Ankara" 
-                    target="_blank" 
+            <Reveal delay={80}>
+              <div className="flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-line sm:p-8">
+                <CardTitle icon={LuMapPin}>Adres</CardTitle>
+                <address className="mt-6 font-serif text-[1.05rem] leading-snug text-brand-950 not-italic sm:text-xl">
+                  {site.fullName}
+                  <br />
+                  {site.address.lines[0]}
+                  <br />
+                  {site.address.lines[1]}
+                </address>
+                <div className="mt-auto flex flex-wrap gap-2 pt-7">
+                  <a
+                    href={mapLinks.directions}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                    className="btn btn-primary px-4 py-2.5 text-sm sm:px-5"
                   >
-                    <FaMapMarkerAlt />
-                    Haritada Görüntüle
+                    <LuNavigation className="size-4" aria-hidden="true" />
+                    Yol tarifi al
                   </a>
+                  <button type="button" onClick={copyAddress} className="btn btn-outline px-4 py-2.5 text-sm sm:px-5">
+                    {copied ? (
+                      <LuCheck className="size-4 text-accent-600" aria-hidden="true" />
+                    ) : (
+                      <LuCopy className="size-4" aria-hidden="true" />
+                    )}
+                    <span aria-live="polite">{copied ? 'Kopyalandı' : 'Adresi kopyala'}</span>
+                  </button>
                 </div>
               </div>
-            </div>
+            </Reveal>
+
+            <Reveal delay={160}>
+              <div className="h-full rounded-3xl bg-white p-6 ring-1 ring-line sm:p-8">
+                <CardTitle icon={LuClock}>Çalışma Saatleri</CardTitle>
+                <dl className="mt-5 divide-y divide-line">
+                  {site.hours.map((row) => {
+                    const isToday = row.days.includes(today)
+                    return (
+                      <div key={row.label} className="flex items-center justify-between gap-4 py-3.5">
+                        <dt className="flex items-center gap-2 whitespace-nowrap text-ink/80">
+                          {row.label}
+                          {isToday && (
+                            <span className="rounded-full bg-accent-100 px-2 py-0.5 text-[0.7rem] font-semibold text-accent-800">
+                              Bugün
+                            </span>
+                          )}
+                        </dt>
+                        <dd
+                          className={cn(
+                            'font-medium whitespace-nowrap tabular-nums',
+                            row.time === 'Kapalı' ? 'text-muted' : 'text-brand-900',
+                          )}
+                        >
+                          {row.time}
+                        </dd>
+                      </div>
+                    )
+                  })}
+                </dl>
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div className="h-full rounded-3xl bg-white p-6 ring-1 ring-line sm:p-8">
+                <h2 className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Sosyal Medya</h2>
+                <p className="mt-2 text-ink/70">Güncel paylaşımlarımız için bizi takip edin.</p>
+                <ul className="mt-5 space-y-2">
+                  {socialLinks.map((account) => (
+                    <li key={account.href}>
+                      <a
+                        href={account.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center justify-between gap-4 rounded-2xl px-4 py-3 ring-1 ring-line transition-colors hover:bg-brand-50 hover:ring-brand-200"
+                      >
+                        <span className="flex items-center gap-3 font-medium text-brand-950">
+                          <SocialIcon name={account.icon} className="size-4 text-brand-700" />
+                          {account.label}
+                        </span>
+                        <span className="text-sm text-muted">{account.handle}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           </div>
+
+          <Reveal delay={120} className="lg:col-span-7">
+            <div className="relative h-[26rem] overflow-hidden rounded-3xl bg-brand-100 ring-1 ring-line sm:h-[32rem] lg:sticky lg:top-28 lg:h-[calc(100svh-9rem)] lg:max-h-[48rem]">
+              <iframe
+                title={`${site.name} konumu`}
+                src={mapLinks.embed}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 size-full border-0"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
-    </div>
+    </>
   )
 }
 

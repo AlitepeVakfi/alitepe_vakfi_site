@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 npm run dev       # start dev server (exposed on all interfaces)
 npm run build     # production build → dist/
-npm run lint      # ESLint
+npm run lint      # ESLint (src/pages/Faaliyetlerimiz.jsx and docs/gallery.js have pre-existing errors)
 npm run preview   # preview production build locally
 ```
 
@@ -15,25 +15,32 @@ No test framework is configured.
 
 ## Architecture
 
-**Stack:** React 19 + Vite 6 + Tailwind CSS v4 (via `@tailwindcss/vite` plugin — no `tailwind.config.js`). Turkish-language foundation website for Ali Tepe Vakfı.
+**Stack:** React 19 + Vite 6 + Tailwind CSS v4 (via `@tailwindcss/vite` plugin — no `tailwind.config.js`). Turkish-language website for Ali Tepe Çağdaş Eğitim ve Sağlık Vakfı.
 
-**Routing:** All routes are nested under `src/layouts/MainLayout.jsx` (Header + Outlet + Footer). Routes are declared in `src/App.jsx`. Adding a new page means creating the component and adding a `<Route>` there.
-
-**Active routes:**
-- `/` → `pages/Home`
+**Routing:** `HashRouter` (URLs look like `/#/haberler`) — keep it, GitHub Pages has no SPA fallback. All routes are nested under `src/layouts/MainLayout.jsx` (Header + Outlet + Footer) and declared in `src/App.jsx`:
+- `/` → `pages/Home` (sections in `components/Home/`)
 - `/ali-tepe` → `pages/AliTepeBio`
 - `/mutevelli-heyeti` → `pages/MutevelliHeyeti`
-- `/faaliyetlerimiz` → `pages/Faaliyetlerimiz`
+- `/haberler` → `pages/Events/LastEvents`
+- `/haber/:eventId` → `pages/Events/EventDetails`
 - `/contact` → `pages/Contact`
-- `/etkinlikler` → `pages/Events/LastEvents`
-- `/etkinlik/:eventId` → `pages/Events/EventDetails`
+- `/faaliyetlerimiz` → `pages/Faaliyetlerimiz` (not linked in the menu; contains placeholder data)
+- `*` → `pages/NotFound`
 
-**Content management:** Most site-wide text (name, tagline, contact info, social links, image paths) lives in `src/data/siteContent.json`. Events list is in `src/data/events.json`. However, `EventDetails.jsx` currently has its event data hardcoded — it does not read from `events.json`.
+Every page except Faaliyetlerimiz starts with a dark (`bg-brand-950`) hero, so the fixed header is transparent at the top and turns solid on scroll. Pages with a light top must be listed in `lightTopRoutes` (`src/data/site.js`).
 
-**Images/CDN:** Static assets are hosted in a separate GitHub repo (`AlitepeVakfi/cdn`) and referenced via `https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/...`. Updating images means pushing to that CDN repo, not this one.
+**Content (single source of truth):**
+- `src/data/site.js` — foundation name, e-mail, address, working hours, social links, menu (`navigation`), CDN helpers `cdn()` / `asset()`.
+- `src/data/news.js` — news items used by the home page, the news list and the detail page. Sorted by `date` automatically. Gallery photos are `foto_1…foto_N` in a folder; `exclude` skips missing numbers.
+- `src/data/board.js` — mütevelli heyeti. `focus: [x%, y%]` is the face position in the original photo and `zoom` enlarges small faces; `components/ui/Portrait.jsx` centers the face from these values.
+- The JSON files still in `src/data/` (`collaborators.json`, `contact.json`, `whyUs_photos.json`, …) are leftovers from the template and are not used.
 
-**Utilities:** `src/libs/utils.js` exports `cn()` (clsx + tailwind-merge) for conditional class merging.
+**Design system:** tokens live in `src/index.css` (`@theme static`): `brand-*` (logo navy, `#2a3c80`), `accent-*` (logo globe turquoise, `#00a3c0`), neutrals `paper`, `sand`, `line`, `ink`, `muted`. Fonts: Newsreader (`font-serif`, headings) and Inter (`font-sans`), loaded in `index.html`. Standard ligatures are disabled on `body` so Turkish `fı`/`fi` render correctly. Shared classes: `.btn` + `.btn-primary|light|ghost-light|outline`, `.eyebrow`, `.link-arrow`, `.reveal`, and the `wrapper` utility (page container). Reusable pieces are in `src/components/ui/` (`PageHeader`, `SectionHeading`, `Reveal`, `Portrait`, `Lightbox`, `Logo`, `SocialLinks`, `Ornaments`) and `src/components/news/NewsCard.jsx`.
 
-**Deployment:** GitHub Actions (`.github/workflows/static.yml`) builds and deploys to GitHub Pages on every push to `main`. The Vite `base` is `/alitepe_vakfi_site/` in production and `/` in dev — this is handled automatically in `vite.config.js`.
+**Images:** content photos are hosted in a separate repo (`AlitepeVakfi/cdn`) and referenced via `cdn('path')` → `https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/...`. Brand assets (logo, favicons, `og-image.jpg`) and the Hayati Bice gallery live in `public/`.
 
-**Orphaned files:** `src/pages/Teams.jsx`, `src/pages/About/`, `src/pages/Teams/`, and `src/pages/Events/ActiveEvents.jsx` exist but are not wired to any route.
+**Utilities:** `src/libs/utils.js` exports `cn()` (clsx + tailwind-merge) and `formatDate()` (`2026-08-01` → `1 Ağustos 2026`).
+
+**Deployment:** GitHub Actions (`.github/workflows/static.yml`) builds and deploys to GitHub Pages on every push to `main` — pushing to `main` publishes the live site. Custom domain `www.alitepevakfi.org.tr` (`public/CNAME`), so the Vite `base` is `/`.
+
+**Orphaned files:** `src/pages/Teams.jsx`, `src/pages/Teams/`, `src/pages/About/`, `src/pages/Events/ActiveEvents.jsx`, `src/components/Home/{ImpactStats,WhyUs,Collabrators}.jsx`, `src/components/ui/Carousel.jsx`, the `docs/` static HTML copy and `etkinlikFotograflari/` (duplicate of `public/events/hayati_bice_konferans`) are not used by the app. `node_modules/` and `dist/` are committed despite `.gitignore`.

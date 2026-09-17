@@ -1,107 +1,39 @@
-import React from 'react';
-import { FaCalendarDays } from "react-icons/fa6";
-import Button from "../../components/ui/Button";
-import { BiDetail } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import NewsCard from '../../components/news/NewsCard';
+import PageHeader from '../../components/ui/PageHeader';
+import Reveal from '../../components/ui/Reveal';
+import { sortedNews } from '../../data/news';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const LastEvents = () => {
-  const events = [
-    {
-      id: 'orhan-ziya-diren-cenaze-toreni',
-      title: 'Mütevelli Heyeti Üyemiz Orhan Ziya Diren\'i Kaybettik',
-      date: '01.08.2026',
-      time: 'İkindi Namazı Sonrası',
-      type: 'Cenaze Töreni',
-      description: 'Vakfımız mütevelli heyeti asil üyesi, DİREN Holding Onursal Yönetim Kurulu Başkanı ve eski Tokat Milletvekili Orhan Ziya Diren\'i kaybetmenin derin üzüntüsünü yaşıyoruz. Merhum, Tokat Alipaşa Camii\'nde kılınan cenaze namazının ardından Erenler Mezarlığı\'ndaki aile kabristanına defnedildi.',
-      image: 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/orhan_ziya_diren_cenaze_kapak.webp',
-      galleryFolder: 'orhan_ziya_diren_cenaze_toreni'
-    },
-    {
-      id: 'hayati-bice-turk-dunyasi-konferansi',
-      title: 'Türk Dünyasında Yesevi Hedefleri',
-      date: '06.06.2026',
-      time: '14:00',
-      speaker: 'Dr. Hayati Bice',
-      type: 'Konferans',
-      description: 'Dr. Hayati Bice\'nin Türk dünyasının ortak kültürel mirasından hareketle gelecek vizyonunu ele aldığı, birlik, dayanışma ve kültürel kimliğin güçlendirilmesi ekseninde şekillenen değerli konferans.',
-      image: '/events/hayati_bice_konferans/foto_1.jpeg',
-      galleryFolder: 'hayati_bice_konferans'
-    },
-    {
-      id: 'ali-tepe-anma-programi',
-      title: 'Ali Tepe Vefat Yıl Dönümü Anma Programı',
-      date: '18.04.2026',
-      time: '14:00',
-      type: 'Anma Programı',
-      description: 'Eğitim ve sağlık alanında büyük hizmetler veren, okullar açan ve öğrencilere burs bağlayan Ali Tepe, vefat yıl dönümünde Kur\'an-ı Kerim eşliğinde düzenlenen anma programıyla rahmetle anıldı.',
-      image: 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/ali_tepe_anma_kapak.webp',
-      galleryFolder: 'ali_tepe_anma_programi'
-    },
-    {
-      id: 'toplumsal-yasamda-hosgorunun-yeri',
-      title: 'Toplumsal Yaşamda Hoşgörünün Yeri',
-      date: '01.11.2025',
-      time: '15:00',
-      speaker: 'Prof. Dr. Mustafa Erdem',
-      description: 'Toplumsal Yaşamda Hoşgörünün Yeri konferansında, Prof. Dr. Mustafa Erdem tarafından sunulan çok-kültürlü toplumlarda toplumsal uyum ve barış konuları ele alınmıştır.',
-      image: 'https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/events/konferans_kapak_toplumsal_yasamda_hosgorunun_yeri.webp',
-      galleryFolder: 'toplumsal_yasamda_hosgorunun_yeri_konferans'
-    }
-  ];
+  useDocumentTitle('Haberler');
+  const [featured, ...others] = sortedNews;
 
   return (
-    <div className="min-h-screen bg-white py-20">
-      <div className="container my-12">
-        <h6 className="text-center mb-16 text-4xl font-semibold text-gradient-br from-foreground to-foreground/40">
-          Haberler
-        </h6>
+    <>
+      <PageHeader
+        breadcrumbs={[{ label: 'Haberler' }]}
+        eyebrow="Vakıftan Haberler"
+        title="Haberler"
+        description="Vakfımızın düzenlediği konferanslar, anma programları ve kurumsal duyurular."
+      />
 
-        <div className="col-start gap-12">
-          {events.map((event, index) => (
-            <div
-              key={event.id}
-              className={`mx-auto xs:w-[90%] xls:w-[80%] w-full flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
-            >
-              <img
-                className="w-full md:w-84 lg:w-96 object-cover rounded-lg"
-                src={event.image}
-                alt={event.title}
-              />
-              <div className="bg-white ps-6 md:ps-12 py-6 pe-6 inset-shadow-sm inset-shadow-foreground/5">
-                <h6 className="text-2xl font-semibold mb-3 text-gradient-br from-foreground to-foreground/40">
-                  {event.title}
-                </h6>
-                <div className="row-center gap-3 mb-3">
-                  <FaCalendarDays size={20} />
-                  {event.date} • {event.time}
-                </div>
-                <div className="row-center gap-3 mb-3">
-                  <span className="font-semibold text-primary">
-                    {event.speaker ? `Konuşmacı: ${event.speaker}` : event.type}
-                  </span>
-                </div>
-                <p>
-                  {event.description}
-                </p>
-                <div className="row-center gap-6 mt-4">
-                  <Link to={`/haber/${event.id}`}>
-                    <Button
-                      className=" hover:-translate-y-1 transition-transform"
-                      colorMode="primary"
-                    >
-                      Detaylar
-                      <BiDetail />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
+      <section className="py-16 sm:py-24">
+        <div className="wrapper">
+          {featured && (
+            <Reveal>
+              <NewsCard item={featured} variant="wide" />
+            </Reveal>
+          )}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {others.map((item, index) => (
+              <Reveal key={item.slug} delay={(index % 3) * 90} className="h-full">
+                <NewsCard item={item} />
+              </Reveal>
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

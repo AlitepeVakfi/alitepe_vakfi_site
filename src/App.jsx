@@ -6,6 +6,7 @@ import MutevelliHeyeti from "./pages/MutevelliHeyeti";
 import Faaliyetlerimiz from "./pages/Faaliyetlerimiz";
 import LastEvents from "./pages/Events/LastEvents";
 import EventDetails from "./pages/Events/EventDetails";
+import NotFound from "./pages/NotFound";
 import MainLayout from "./layouts/MainLayout";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/haberler" element={<LastEvents />} />
         <Route path="/haber/:eventId" element={<EventDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

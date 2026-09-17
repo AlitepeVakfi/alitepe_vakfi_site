@@ -1,57 +1,83 @@
-import React from "react";
-import { FaInstagram, FaFacebook, FaXTwitter, FaEnvelope } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { LuArrowUp, LuMail, LuMapPin } from "react-icons/lu";
+import Logo from "../ui/Logo";
+import SocialLinks from "../ui/SocialLinks";
+import { GlobeMark } from "../ui/Ornaments";
+import { mapLinks, navigation, site } from "../../data/site";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="py-6 px-4" style={{ backgroundColor: '#2a3c7e' }}>
-      <div className="container">
-        <div className=" flex flex-col sm:flex-row sm:justify-between ">
-          <div className="sm:w-[40%] lg:w-[45%]">
-            <div className="row-center gap-3 font-mono text-lg font-semibold">
-              <img
-                src="https://raw.githubusercontent.com/AlitepeVakfi/cdn/main/logo-removebg-preview.webp"
-                alt="Logo"
-                className="w-12 h-12"
-              />
-              <span className="cursor-pointer" style={{ color: '#dee3df' }}>
-                Ali Tepe Vakfı
-              </span>
-            </div>
-            <p className="mt-6 text-sm lg:text-base" style={{ color: '#dee3df' }}>
-              Eğitimden sağlığa, sosyal sorumluluktan çevreye uzanan projelerle daha adil ve umut dolu bir gelecek için çalışıyoruz.
-            </p>
+    <footer className="relative isolate overflow-hidden border-t border-white/5 bg-brand-950 text-white/65">
+      <GlobeMark className="pointer-events-none absolute -right-48 -bottom-72 -z-10 w-[46rem] text-white/[0.05]" />
+
+      <div className="wrapper grid gap-12 pt-16 pb-12 sm:pt-20 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-5">
+          <Logo className="text-white" />
+          <p className="mt-6 max-w-sm leading-relaxed">{site.description}</p>
+          <SocialLinks tone="dark" className="mt-8" />
+        </div>
+
+        <div className="grid gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-5 lg:gap-8">
+          <div className="lg:col-span-2">
+            <h2 className="text-xs font-semibold tracking-[0.18em] text-white uppercase">Kurumsal</h2>
+            <ul className="mt-5 space-y-3">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link to={item.href} className="transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="flex flex-1 max-sm:mt-7">
-            <div className="inline-flex flex-col sm:ms-auto">
-              <h6 className="font-semibold text-lg mb-3" style={{ color: '#dee3df' }}>Adres</h6>
-              <div className="italic" style={{ color: '#dee3df' }}>Mithat Paşa Caddesi No: 47 Daire: 3, Kızılay / Çankaya, 06400 Ankara</div>
-
-              <h6 className="font-semibold text-lg mt-3" style={{ color: '#dee3df' }}>İletişim</h6>
-              <a
-                href="mailto:iletisim@alitepevakfi.org.tr"
-                className="inline-flex items-center gap-2 mt-2 hover:underline w-fit"
-                style={{ color: '#dee3df' }}
-              >
-                <FaEnvelope size={16} />
-                iletisim@alitepevakfi.org.tr
-              </a>
-              <div className="row-center gap-3 my-4">
-                <a href="https://www.facebook.com/share/1CZJ1c2jxJ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="rounded-full inset-shadow-sm p-3 border hover:bg-white/10 transition-colors" style={{ borderColor: '#dee3df', color: '#dee3df' }}>
-                  <FaFacebook size={20} />
+          <div className="lg:col-span-3">
+            <h2 className="text-xs font-semibold tracking-[0.18em] text-white uppercase">İletişim</h2>
+            <ul className="mt-5 space-y-4">
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="flex items-start gap-3 break-all transition-colors hover:text-white"
+                >
+                  <LuMail className="mt-0.5 size-5 shrink-0 text-accent-300" aria-hidden="true" />
+                  {site.email}
                 </a>
-                <a href="https://x.com/alitepevakfi?s=21" target="_blank" rel="noopener noreferrer" className="rounded-full inset-shadow-sm p-3 border hover:bg-white/10 transition-colors" style={{ borderColor: '#dee3df', color: '#dee3df' }}>
-                  <FaXTwitter size={20} />
+              </li>
+              <li>
+                <a
+                  href={mapLinks.view}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 transition-colors hover:text-white"
+                >
+                  <LuMapPin className="mt-0.5 size-5 shrink-0 text-accent-300" aria-hidden="true" />
+                  <span>
+                    {site.address.lines[0]}
+                    <br />
+                    {site.address.lines[1]}
+                  </span>
                 </a>
-                <a href="https://www.instagram.com/alitepevakfi?igsh=anZ3aWUyN2puYW9r&utm_source=qr" target="_blank" rel="noopener noreferrer" className="rounded-full inset-shadow-sm p-3 border hover:bg-white/10 transition-colors" style={{ borderColor: '#dee3df', color: '#dee3df' }}>
-                  <FaInstagram size={20} />
-                </a>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="mt-6 text-center text-sm italic border-t pt-4" style={{ borderColor: '#dee3df', color: '#dee3df' }}>
-          © 2025 Ali Tepe Vakfı – Tüm Hakları Saklıdır.
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="wrapper flex flex-col gap-4 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} {site.fullName}. Tüm hakları saklıdır.
+          </p>
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex cursor-pointer items-center gap-2 self-start transition-colors hover:text-white sm:self-auto"
+          >
+            Başa dön
+            <LuArrowUp className="size-4" aria-hidden="true" />
+          </button>
         </div>
       </div>
     </footer>
