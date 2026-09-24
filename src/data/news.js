@@ -14,6 +14,41 @@ import { asset, cdn } from './site'
 
 export const news = [
   {
+    slug: 'mutevelli-heyeti-donem-planlama-toplantisi',
+    title: 'Mütevelli Heyetimiz ve Yönetim Kurulumuz Dönem Planlaması İçin Bir Araya Geldi',
+    category: 'Kurumsal',
+    date: '2026-09-24',
+    location: 'Ali Tepe Eğitim ve Sağlık Vakfı',
+    cover: asset('events/mutevelli-heyeti-donem-planlama-toplantisi/foto_1.webp'),
+    summary:
+      'Vakfımızın mütevelli heyeti ve dernek yönetim kurulu üyeleri, Başkanımız Dr. Reşat Doğru ile bir araya gelerek yeni döneme ilişkin çalışma ve faaliyet planlarını değerlendirdi.',
+    body: [
+      'Vakfımızın mütevelli heyeti ve dernek yönetim kurulu üyeleri, Başkanımız Dr. Reşat Doğru’nun katılımıyla gerçekleştirilen toplantıda bir araya geldi.',
+      'Toplantıda geride kalan dönemin çalışmaları değerlendirilirken, yeni dönemde hayata geçirilmesi planlanan eğitim, sağlık ve sosyal sorumluluk faaliyetleri ele alındı. Vakfımızın topluma sunduğu katkının güçlendirilmesi ve çalışmaların daha geniş kitlelere ulaştırılması amacıyla görüş alışverişinde bulunuldu.',
+      'Ortak akıl ve iş birliği anlayışıyla şekillenen toplantı, yeni dönem hedeflerinin ve öncelikli çalışma alanlarının belirlenmesiyle sona erdi.',
+    ],
+    gallery: { folder: 'mutevelli-heyeti-donem-planlama-toplantisi', count: 7, local: true },
+  },
+  {
+    slug: 'tokatta-bagimlilikla-mucadele-bulusmasi',
+    title: 'Tokat’ta Bağımlılıkla Mücadele İçin Ortak İrade',
+    category: 'Toplumsal Farkındalık',
+    date: '2026-09-22',
+    location: 'Tokat Uyuşturucu ve Madde Bağımlılığı ile Mücadele Derneği',
+    speaker: 'Dr. Reşat Doğru',
+    cover: asset('events/bagimlilikla-mucadele-bulusmasi/foto_1.webp'),
+    summary:
+      'Sivil toplum kuruluşlarının temsilcileri, uyuşturucu madde ve sanal kumar bağımlılığına karşı ortak çözüm yollarını değerlendirmek üzere Tokat’ta bir araya geldi.',
+    body: [
+      'Tokat’taki sivil toplum kuruluşlarının temsilcileri, uyuşturucu madde ve sanal kumar bağımlılığıyla mücadelede ortak çözüm yollarını değerlendirmek amacıyla bir araya geldi. Buluşmaya, görev yaptığı dönemde Bağımlılıkla Mücadele Komisyonu Başkanlığı yapan Vakfımız Mütevelli Heyeti Başkanı ve eski Devlet Bakanı Dr. Reşat Doğru da konuşmacı olarak katıldı.',
+      'Tokat Uyuşturucu ve Madde Bağımlılığı ile Mücadele Derneğinde gerçekleştirilen programa; akademisyenler, hukukçular, kültür-sanat alanında çalışan sivil toplum temsilcileri ve davetliler iştirak etti.',
+      'Programda konuşan Dr. Reşat Doğru, uyuşturucu madde kullanımının aileleri ve toplumları derinden etkileyen ciddi bir halk sağlığı sorunu olduğuna dikkat çekti. Tedavi sürecinde kişinin sosyal çevresinin belirleyici önem taşıdığını vurgulayan Doğru, bağımlılıkla mücadelenin yalnızca bireysel değil, toplumsal bir sorumluluk olduğunu ifade etti.',
+      'Dijital çağla birlikte büyüyen sanal kumar tehlikesine de değinen Dr. Doğru; kolay erişilebilirliği nedeniyle hızla yayılan bu bağımlılık türünün finansal kayıplara, psikolojik sorunlara ve sosyal yaşamda ciddi tahribata yol açabildiğini belirtti.',
+      'Toplantıda özellikle gençlerin zararlı alışkanlıklardan korunması, toplumsal farkındalığın artırılması ve kurumlar arası iş birliğinin güçlendirilmesi konuları ele alındı. Programın sonunda Dr. Reşat Doğru, “Bağ” ve “Bir Milletin Sessiz Çığlığı” adlı kitaplarını katılımcılar için imzaladı.',
+    ],
+    gallery: { folder: 'bagimlilikla-mucadele-bulusmasi', count: 3, local: true },
+  },
+  {
     slug: 'orhan-ziya-diren-cenaze-toreni',
     title: "Mütevelli Heyeti Üyemiz Orhan Ziya Diren'i Kaybettik",
     category: 'Cenaze Töreni',
