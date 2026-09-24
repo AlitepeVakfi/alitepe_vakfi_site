@@ -18,7 +18,7 @@ export const news = [
     title: 'Mütevelli Heyetimiz ve Yönetim Kurulumuz Dönem Planlaması İçin Bir Araya Geldi',
     category: 'Kurumsal',
     date: '2026-09-24',
-    location: 'Ali Tepe Eğitim ve Sağlık Vakfı',
+    location: 'Tokat',
     cover: asset('events/mutevelli-heyeti-donem-planlama-toplantisi/foto_1.webp'),
     summary:
       'Vakfımızın mütevelli heyeti ve dernek yönetim kurulu üyeleri, Başkanımız Dr. Reşat Doğru ile bir araya gelerek yeni döneme ilişkin çalışma ve faaliyet planlarını değerlendirdi.',
