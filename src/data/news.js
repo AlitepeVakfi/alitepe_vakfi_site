@@ -27,7 +27,7 @@ export const news = [
       'Toplantıda geride kalan dönemin çalışmaları değerlendirilirken, yeni dönemde hayata geçirilmesi planlanan eğitim, sağlık ve sosyal sorumluluk faaliyetleri ele alındı. Vakfımızın topluma sunduğu katkının güçlendirilmesi ve çalışmaların daha geniş kitlelere ulaştırılması amacıyla görüş alışverişinde bulunuldu.',
       'Ortak akıl ve iş birliği anlayışıyla şekillenen toplantı, yeni dönem hedeflerinin ve öncelikli çalışma alanlarının belirlenmesiyle sona erdi.',
     ],
-    gallery: { folder: 'mutevelli-heyeti-donem-planlama-toplantisi', count: 7, local: true },
+    gallery: { folder: 'mutevelli-heyeti-donem-planlama-toplantisi', count: 2, local: true },
   },
   {
     slug: 'tokatta-bagimlilikla-mucadele-bulusmasi',
