@@ -11,24 +11,14 @@ const SLIDE_COUNT = 5;
 const SLIDE_INTERVAL = 6000;
 
 // Ana sayfada başlığın hemen altında duran, haberleri sırayla gösteren bölüm.
-// Fare üstündeyken, odak içerdeyken, bölüm ekranda değilken ya da hareket azaltma
-// tercihi açıkken kendiliğinden dönmez.
+// Fare üstündeyken, odak içerdeyken ya da bölüm ekranda değilken kendiliğinden dönmez.
 const LatestNews = () => {
   const slides = sortedNews.slice(0, SLIDE_COUNT);
   const [index, setIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [inView, setInView] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
   const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -37,14 +27,14 @@ const LatestNews = () => {
       return;
     }
     const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
-      threshold: 0.45,
+      threshold: 0.25,
     });
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
 
   const count = slides.length;
-  const paused = hovered || focused || !inView || reducedMotion || count < 2;
+  const paused = hovered || focused || !inView || count < 2;
 
   const go = useCallback((next) => setIndex((next + count) % count), [count]);
 

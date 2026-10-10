@@ -14,7 +14,7 @@ const SCROLL_DURATION = 650;
 // Yalnızca ziyaretçinin kendi hareketleri kaydırmayı iptal eder. "scroll" olayı dinlenmez:
 // tarayıcının kaydırma konumunu geri yüklemesi ya da mobilde adres çubuğunun küçülmesi de
 // bu olayı tetikleyip kaydırmayı sessizce iptal ediyordu.
-const CANCEL_EVENTS = ["wheel", "touchstart", "keydown"];
+const CANCEL_EVENTS = ["touchstart", "keydown"];
 
 const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
@@ -28,10 +28,10 @@ let introPlayed = false;
 const useIntroScroll = () => {
   useEffect(() => {
     if (introPlayed) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      introPlayed = true;
-      return;
-    }
+    // Sistem "animasyonları azalt" diyorsa (Windows'ta animasyon efektleri kapalıysa Chrome da
+    // böyle bildirir) kaydırma animasyonsuz, tek hamlede yapılır. Hiç yapılmasın demiyoruz:
+    // bölümün sırayla haber göstermesi için ziyaretçinin oraya gelmesi gerekiyor.
+    const instant = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let timer;
     let frame;
@@ -41,11 +41,16 @@ const useIntroScroll = () => {
       clearTimeout(timer);
       cancelAnimationFrame(frame);
       if (loadListener) window.removeEventListener("load", loadListener);
+      window.removeEventListener("wheel", onWheel);
       CANCEL_EVENTS.forEach((name) => window.removeEventListener(name, cancel));
     };
     const cancel = () => {
       introPlayed = true;
       stop();
+    };
+    // Dokunmatik yüzeylerde parmak değmesi çok küçük tekerlek değerleri üretebiliyor; bunlar sayılmaz.
+    const onWheel = (event) => {
+      if (Math.abs(event.deltaY) > 4) cancel();
     };
 
     const animate = () => {
@@ -53,6 +58,10 @@ const useIntroScroll = () => {
       if (!target) return cancel();
       const from = window.scrollY;
       const started = performance.now();
+      if (instant) {
+        window.scrollTo({ top: target.getBoundingClientRect().top + from, behavior: "instant" });
+        return cancel();
+      }
       const step = (now) => {
         const progress = Math.min((now - started) / SCROLL_DURATION, 1);
         const to = target.getBoundingClientRect().top + window.scrollY;
@@ -82,6 +91,7 @@ const useIntroScroll = () => {
       timer = setTimeout(start, MAX_LOAD_WAIT);
     }, HERO_PAUSE);
 
+    window.addEventListener("wheel", onWheel, { passive: true });
     CANCEL_EVENTS.forEach((name) => window.addEventListener(name, cancel, { passive: true }));
     return stop;
   }, []);
