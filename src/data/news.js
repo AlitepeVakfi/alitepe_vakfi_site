@@ -14,20 +14,20 @@ import { asset, cdn } from './site'
 
 export const news = [
   {
-    slug: 'mutevelli-heyeti-donem-planlama-toplantisi',
-    title: 'Mütevelli Heyetimiz ve Yönetim Kurulumuz Dönem Planlaması İçin Bir Araya Geldi',
-    category: 'Kurumsal',
+    slug: 'tokatli-hemsehrilerle-aksam-yemegi-bulusmasi',
+    title: 'Tokatlı Hemşehrilerimizle Akşam Yemeğinde Buluştuk',
+    category: 'Hemşehri Buluşması',
     date: '2026-09-24',
     location: 'Tokat',
-    cover: asset('events/mutevelli-heyeti-donem-planlama-toplantisi/foto_1.webp'),
+    cover: asset('events/tokatli-hemsehrilerle-aksam-yemegi/foto_1.webp'),
     summary:
-      'Vakfımızın mütevelli heyeti ve dernek yönetim kurulu üyeleri, Başkanımız Dr. Reşat Doğru ile bir araya gelerek yeni döneme ilişkin çalışma ve faaliyet planlarını değerlendirdi.',
+      'Tokat’ta düzenlenen akşam yemeğinde, Dr. Reşat Doğru’nun katılımıyla Tokatlı hemşehrilerimiz bir araya geldi. Sofra başındaki sohbette Tokat’ın bugünü ve vakfımızın çalışmaları konuşuldu.',
     body: [
-      'Vakfımızın mütevelli heyeti ve dernek yönetim kurulu üyeleri, Başkanımız Dr. Reşat Doğru’nun katılımıyla gerçekleştirilen toplantıda bir araya geldi.',
-      'Toplantıda geride kalan dönemin çalışmaları değerlendirilirken, yeni dönemde hayata geçirilmesi planlanan eğitim, sağlık ve sosyal sorumluluk faaliyetleri ele alındı. Vakfımızın topluma sunduğu katkının güçlendirilmesi ve çalışmaların daha geniş kitlelere ulaştırılması amacıyla görüş alışverişinde bulunuldu.',
-      'Ortak akıl ve iş birliği anlayışıyla şekillenen toplantı, yeni dönem hedeflerinin ve öncelikli çalışma alanlarının belirlenmesiyle sona erdi.',
+      'Tokat’ta, Dr. Reşat Doğru’nun katılımıyla hemşehrilerimize yönelik bir akşam yemeği düzenlendi. Bahçede kurulan uzun sofrada, çay ve yemek eşliğinde yapılan buluşmaya çok sayıda Tokatlı katıldı.',
+      'Yemek boyunca Tokat’ın bugünü, hemşehrilerimizin gündemi ve vakfımızın eğitim ile sağlık alanındaki çalışmaları üzerine sohbet edildi. Katılımcılar görüş ve önerilerini paylaştı.',
+      'Samimi bir havada geçen buluşma, hatıra fotoğrafı çekilmesinin ardından sona erdi. Hemşehrilerimizle bir araya gelmeyi önümüzdeki dönemde de sürdüreceğiz.',
     ],
-    gallery: { folder: 'mutevelli-heyeti-donem-planlama-toplantisi', count: 2, local: true },
+    gallery: { folder: 'tokatli-hemsehrilerle-aksam-yemegi', count: 2, local: true },
   },
   {
     slug: 'tokatta-bagimlilikla-mucadele-bulusmasi',

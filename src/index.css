@@ -56,6 +56,7 @@
 
   --animate-hero-zoom: hero-zoom 2.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   --animate-fade-in: fade-in 0.35s ease-out both;
+  --animate-news-progress: news-progress 6s linear both;
 }
 
 @keyframes hero-zoom {
@@ -73,6 +74,15 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes news-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -322,7 +332,8 @@
 
   .pulse-path,
   .animate-hero-zoom,
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-news-progress {
     animation: none;
   }
 }

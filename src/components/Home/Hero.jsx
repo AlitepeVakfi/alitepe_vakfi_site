@@ -25,7 +25,7 @@ const Hero = () => {
         className="absolute inset-0 -z-10 bg-linear-to-t from-brand-950 via-brand-950/25 to-brand-950/50"
       />
 
-      <div className="wrapper pt-40 pb-40 sm:pb-48">
+      <div className="wrapper pt-40 pb-28 sm:pb-36">
         <div className="max-w-3xl">
           <Reveal>
             <p className="flex items-center gap-4 text-[0.7rem] font-semibold tracking-[0.14em] text-accent-200 uppercase sm:text-xs sm:tracking-[0.2em]">

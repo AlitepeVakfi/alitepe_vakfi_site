@@ -57,11 +57,11 @@ export const members = [
     focus: [49, 38],
   },
   {
-    name: 'Orhan Ziya Diren',
+    name: 'Prof. Dr. Necaattin Barışçı',
     title: 'Asil Üye',
-    profession: 'Eski Milletvekili · Ticaret',
-    photo: cdn('members/mutevelli/orhan-ziya-diren.webp'),
-    focus: [49, 35],
+    profession: 'Akademisyen · Gazi Üniversitesi',
+    photo: cdn('members/mutevelli/necaattin-barisci.webp'),
+    focus: [50, 40],
   },
   {
     name: 'Mustafa Baş',

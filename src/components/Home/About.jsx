@@ -17,7 +17,7 @@ const About = () => {
   return (
     <section id="hakkimizda" className="scroll-mt-28 pb-24 sm:pb-32">
       <div className="wrapper">
-        <Reveal className="relative z-10 -mt-24 grid grid-cols-3 overflow-hidden rounded-3xl bg-white shadow-[0_40px_70px_-40px_rgb(15_24_52/0.45)] ring-1 ring-line sm:-mt-28">
+        <Reveal className="grid grid-cols-3 overflow-hidden rounded-3xl bg-white shadow-[0_40px_70px_-40px_rgb(15_24_52/0.45)] ring-1 ring-line">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
