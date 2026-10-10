@@ -14,6 +14,26 @@ import { asset, cdn } from './site'
 
 export const news = [
   {
+    slug: '2026-2027-egitim-ogretim-yili-acilis-programi',
+    title: '2026-2027 Eğitim ve Öğretim Yılı Açılış Programımızı Gerçekleştirdik',
+    category: 'Açılış Programı',
+    date: '2026-10-10',
+    time: '14:00',
+    location: 'Ali Tepe Vakfı',
+    speaker: 'Dr. Reşat Doğru ve Uzm. Dr. Sametcan Demirci',
+    cover: cdn('events/acilis_programi/foto_7.webp'),
+    summary:
+      '2026-2027 eğitim ve öğretim yılı açılış programımız, mütevelli heyetimizin, öğrencilerimizin ve davetlilerin katılımıyla Ali Tepe Vakfı’nda gerçekleştirildi. Eski Devlet Bakanı ve Mütevelli Heyeti Başkanımız Dr. Reşat Doğru’nun açılış konuşmasıyla başlayan programda, bağımlılıkları konu alan “Bir Milletin Sessiz Çığlığı” adlı kitabın tanıtımı Dr. Reşat Doğru ve Uzm. Dr. Sametcan Demirci tarafından yapıldı.',
+    body: [
+      'Ali Tepe Vakfı olarak 2026-2027 eğitim ve öğretim yılının açılışını, 10 Ekim 2026 Cumartesi günü saat 14.00’te Ali Tepe Vakfı’nda düzenlenen programla gerçekleştirdik. Programa mütevelli heyetimiz, öğrencilerimiz ve çok sayıda davetli katıldı.',
+      'Program, Eski Devlet Bakanı ve Mütevelli Heyeti Başkanımız Dr. Reşat Doğru’nun açılış konuşmasıyla başladı.',
+      'Programın en öne çıkan bölümünde, bağımlılıkları konu alan “Bir Milletin Sessiz Çığlığı” adlı kitabın tanıtımı Eski Devlet Bakanı ve Mütevelli Heyeti Başkanımız Dr. Reşat Doğru ve Uzm. Dr. Sametcan Demirci tarafından yapıldı. Tanıtımda, bağımlılıkların toplumumuz için bir beka sorunu olduğu vurgulandı.',
+      'Kitaba katkı yapan öğrencilerimiz de bağımlılıklar ve zararları hakkında kısa konuşmalar yaptı; vakfımızın desteklerine ilişkin duygu ve düşüncelerini paylaştı.',
+      'Program, kapanış konuşmasının ardından sona erdi. Emeği geçen konuşmacılara, öğrencilerimize ve tüm davetlilere teşekkür ediyor; 2026-2027 eğitim ve öğretim yılının hayırlı olmasını diliyoruz.',
+    ],
+    gallery: { folder: 'acilis_programi', count: 19 },
+  },
+  {
     slug: 'tokatli-hemsehrilerle-aksam-yemegi-bulusmasi',
     title: 'Tokatlı Hemşehrilerimizle Akşam Yemeğinde Buluştuk',
     category: 'Hemşehri Buluşması',
