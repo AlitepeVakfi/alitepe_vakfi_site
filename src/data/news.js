@@ -14,6 +14,25 @@ import { asset, cdn } from './site'
 
 export const news = [
   {
+    slug: 'ozcan-yeniceri-genclik-ve-gelecek-konferansi',
+    title: 'Prof. Dr. Özcan Yeniçeri ile “Gençlik ve Gelecek” Konferansını Gerçekleştirdik',
+    category: 'Konferans',
+    date: '2026-10-24',
+    time: '14:00',
+    location: 'Ali Tepe Vakfı, Ankara',
+    speaker: 'Prof. Dr. Özcan Yeniçeri',
+    cover: asset('events/genclik-ve-gelecek/foto_1.webp'),
+    summary:
+      'Vakfımızda Prof. Dr. Özcan Yeniçeri’nin konuşmacı olarak katıldığı “Gençlik ve Gelecek” konulu konferansı düzenledik. Programın ardından Mütevelli Heyeti Başkanımız Dr. Reşat Doğru, Yeniçeri’ye plaket takdim etti.',
+    body: [
+      'Ali Tepe Çağdaş Eğitim ve Sağlık Vakfı olarak, 24 Ekim 2026 Cumartesi günü saat 14.00’te Ankara’daki vakıf merkezimizde Prof. Dr. Özcan Yeniçeri’yi ağırladık. “Gençlik ve Gelecek” başlıklı konferansta davetlilerimiz bir araya geldi.',
+      'Prof. Dr. Özcan Yeniçeri, konferansın konusu olan gençlik ve geleceğe ilişkin görüşlerini katılımcılarla paylaştı. Eski Devlet Bakanı ve Mütevelli Heyeti Başkanımız Dr. Reşat Doğru da programda yer aldı.',
+      'Konferansın ardından Dr. Reşat Doğru, katılımı ve katkıları dolayısıyla Prof. Dr. Özcan Yeniçeri’ye teşekkür plaketi takdim etti. Plaket takdimi sırasında birlikte hatıra fotoğrafları çekildi.',
+      'Davetimizi kabul eden Prof. Dr. Özcan Yeniçeri’ye ve konferansımıza katılan tüm misafirlerimize teşekkür ederiz.',
+    ],
+    gallery: { folder: 'genclik-ve-gelecek', count: 4, local: true },
+  },
+  {
     slug: '2026-2027-egitim-ogretim-yili-acilis-programi',
     title: '2026-2027 Eğitim ve Öğretim Yılı Açılış Programımızı Gerçekleştirdik',
     category: 'Açılış Programı',
