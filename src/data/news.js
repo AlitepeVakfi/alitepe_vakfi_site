@@ -30,7 +30,7 @@ export const news = [
       'Konferansın ardından Dr. Reşat Doğru, katılımı ve katkıları dolayısıyla Prof. Dr. Özcan Yeniçeri’ye teşekkür plaketi takdim etti. Plaket takdimi sırasında birlikte hatıra fotoğrafları çekildi.',
       'Davetimizi kabul eden Prof. Dr. Özcan Yeniçeri’ye ve konferansımıza katılan tüm misafirlerimize teşekkür ederiz.',
     ],
-    gallery: { folder: 'genclik-ve-gelecek', count: 4, local: true },
+    gallery: { folder: 'genclik-ve-gelecek', count: 3, local: true },
   },
   {
     slug: '2026-2027-egitim-ogretim-yili-acilis-programi',
