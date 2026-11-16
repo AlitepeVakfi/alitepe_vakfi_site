@@ -14,6 +14,25 @@ import { asset, cdn } from './site'
 
 export const news = [
   {
+    slug: 'gonul-medeniyetimizin-iletisim-dili-konferansi',
+    title: 'Gönül Medeniyetimizin İletişim Dili Konferansını Gerçekleştirdik',
+    category: 'Konferans',
+    date: '2026-11-07',
+    time: '14:00',
+    location: 'Ali Tepe Vakfı',
+    speaker: 'İlhan Tatar',
+    cover: asset('events/gonul-medeniyetimizin-iletisim-dili/foto_1.webp'),
+    summary:
+      'Ali Tepe Vakfı’nda düzenlenen “Gönül Medeniyetimizin İletişim Dili” konferansı, Araştırmacı Yazar ve İletişim Uzmanı İlhan Tatar’ın katılımıyla gerçekleştirildi. “İletişim, Empati ve Odaklanma” alt başlığıyla düzenlenen programda, iletişimin gönül temelli boyutları ele alındı. Programa Mütevelli Heyeti Başkanımız Dr. Reşat Doğru da katıldı.',
+    body: [
+      'Ali Tepe Vakfı olarak düzenlediğimiz “Gönül Medeniyetimizin İletişim Dili” konferansını, 7 Kasım 2026 Cumartesi günü saat 14.00’te Ali Tepe Vakfı’nda gerçekleştirdik. “İletişim, Empati ve Odaklanma” alt başlığıyla düzenlenen programa davetliler katıldı.',
+      'Konferansta, iletişimin yalnızca kelimelerle kurulan bir ilişki olmadığı; dinleme, anlama ve empati kurma becerilerinin de iletişimin temelini oluşturduğu vurgulandı. Gönül medeniyetimizin iletişim dilini şekillendiren samimiyet, saygı, sabır ve karşıdakini anlamaya çalışma gibi değerler ele alındı. Eski Devlet Bakanı ve Mütevelli Heyeti Başkanımız Dr. Reşat Doğru da programda yer aldı.',
+      'Araştırmacı Yazar ve İletişim Uzmanı İlhan Tatar’ın konuşmasında iletişim, empati ve odaklanma kavramları gönül medeniyetimiz perspektifinden ele alındı; gündelik hayatta kurulan ilişkilerde odaklanmanın ve karşıdakini gerçekten dinlemenin önemine dikkat çekildi.',
+      'Programın sonunda konuşmacı İlhan Tatar’a plaket takdim edildi.',
+      'Katılımlarından dolayı İlhan Tatar’a ve tüm davetlilere teşekkür ediyor; iletişim, kültür ve medeniyet alanındaki buluşmalarımızı sürdürmeye devam edeceğimizi bildiriyoruz.',
+    ],
+  },
+  {
     slug: 'ozcan-yeniceri-genclik-ve-gelecek-konferansi',
     title: 'Prof. Dr. Özcan Yeniçeri ile “Gençlik ve Gelecek” Konferansını Gerçekleştirdik',
     category: 'Konferans',
